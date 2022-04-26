@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D14387D828175BFF005F5D64 /* SplashScreenAScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14387D728175BFF005F5D64 /* SplashScreenAScene.swift */; };
+		D14387DA28175D46005F5D64 /* SplashScreenBScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14387D928175D46005F5D64 /* SplashScreenBScene.swift */; };
+		D14387DC28175DE7005F5D64 /* TitleScreenScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14387DB28175DE7005F5D64 /* TitleScreenScene.swift */; };
+		D14387DE28175E45005F5D64 /* OptionsScreenScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14387DD28175E45005F5D64 /* OptionsScreenScene.swift */; };
+		D14C1C632817848600BCA0A6 /* CreditsScreenScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14C1C622817848600BCA0A6 /* CreditsScreenScene.swift */; };
+		D14C1C652817853700BCA0A6 /* PlayLevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14C1C642817853700BCA0A6 /* PlayLevelScene.swift */; };
+		D14C1C672817857200BCA0A6 /* PlayLevelWinScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14C1C662817857200BCA0A6 /* PlayLevelWinScene.swift */; };
+		D14C1C69281785A300BCA0A6 /* PlayLevelLoseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14C1C68281785A300BCA0A6 /* PlayLevelLoseScene.swift */; };
+		D14C1C6B281785C800BCA0A6 /* GameWinScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14C1C6A281785C800BCA0A6 /* GameWinScene.swift */; };
+		D14C1C6D281785E900BCA0A6 /* GameLoseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14C1C6C281785E900BCA0A6 /* GameLoseScene.swift */; };
+		D166CB972817873B00A2AA70 /* SplashScreenA.sks in Resources */ = {isa = PBXBuildFile; fileRef = D166CB962817873B00A2AA70 /* SplashScreenA.sks */; };
+		D166CB9B2817876400A2AA70 /* SplashScreenB.sks in Resources */ = {isa = PBXBuildFile; fileRef = D166CB9A2817876400A2AA70 /* SplashScreenB.sks */; };
+		D166CB9D2817877300A2AA70 /* TitleScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = D166CB9C2817877300A2AA70 /* TitleScreen.sks */; };
+		D166CB9F2817878200A2AA70 /* OptionsScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = D166CB9E2817878200A2AA70 /* OptionsScreen.sks */; };
+		D166CBA12817879100A2AA70 /* CreditsScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = D166CBA02817879100A2AA70 /* CreditsScreen.sks */; };
+		D166CBA32817879E00A2AA70 /* PlayLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = D166CBA22817879E00A2AA70 /* PlayLevel.sks */; };
+		D166CBA5281787A800A2AA70 /* PlayLevelWin.sks in Resources */ = {isa = PBXBuildFile; fileRef = D166CBA4281787A800A2AA70 /* PlayLevelWin.sks */; };
+		D166CBA7281787B100A2AA70 /* PlayLevelLose.sks in Resources */ = {isa = PBXBuildFile; fileRef = D166CBA6281787B100A2AA70 /* PlayLevelLose.sks */; };
+		D166CBA9281787B900A2AA70 /* GameWin.sks in Resources */ = {isa = PBXBuildFile; fileRef = D166CBA8281787B900A2AA70 /* GameWin.sks */; };
+		D166CBAB281787C100A2AA70 /* GameLose.sks in Resources */ = {isa = PBXBuildFile; fileRef = D166CBAA281787C100A2AA70 /* GameLose.sks */; };
 		D193C63A2812365700D4C4A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D193C6392812365700D4C4A0 /* AppDelegate.swift */; };
 		D193C63C2812365700D4C4A0 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D193C63B2812365700D4C4A0 /* GameScene.sks */; };
 		D193C63E2812365700D4C4A0 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = D193C63D2812365700D4C4A0 /* Actions.sks */; };
@@ -14,9 +34,33 @@
 		D193C6422812365700D4C4A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D193C6412812365700D4C4A0 /* ViewController.swift */; };
 		D193C6442812365800D4C4A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D193C6432812365800D4C4A0 /* Assets.xcassets */; };
 		D193C6472812365800D4C4A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D193C6452812365800D4C4A0 /* Main.storyboard */; };
+		D197CC3528178D57007DE072 /* Bios Beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = D197CC3428178D57007DE072 /* Bios Beep.wav */; };
+		D197CC3728179286007DE072 /* GMScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197CC3628179286007DE072 /* GMScene.swift */; };
+		D1CB21E1281319780006696D /* Balloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB21E0281319780006696D /* Balloon.swift */; };
+		D1CB21E72815EE5F0006696D /* GameMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB21E62815EE5F0006696D /* GameMaster.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D14387D728175BFF005F5D64 /* SplashScreenAScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenAScene.swift; sourceTree = "<group>"; };
+		D14387D928175D46005F5D64 /* SplashScreenBScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenBScene.swift; sourceTree = "<group>"; };
+		D14387DB28175DE7005F5D64 /* TitleScreenScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenScene.swift; sourceTree = "<group>"; };
+		D14387DD28175E45005F5D64 /* OptionsScreenScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScreenScene.swift; sourceTree = "<group>"; };
+		D14C1C622817848600BCA0A6 /* CreditsScreenScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsScreenScene.swift; sourceTree = "<group>"; };
+		D14C1C642817853700BCA0A6 /* PlayLevelScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayLevelScene.swift; sourceTree = "<group>"; };
+		D14C1C662817857200BCA0A6 /* PlayLevelWinScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayLevelWinScene.swift; sourceTree = "<group>"; };
+		D14C1C68281785A300BCA0A6 /* PlayLevelLoseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayLevelLoseScene.swift; sourceTree = "<group>"; };
+		D14C1C6A281785C800BCA0A6 /* GameWinScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWinScene.swift; sourceTree = "<group>"; };
+		D14C1C6C281785E900BCA0A6 /* GameLoseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLoseScene.swift; sourceTree = "<group>"; };
+		D166CB962817873B00A2AA70 /* SplashScreenA.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SplashScreenA.sks; sourceTree = "<group>"; };
+		D166CB9A2817876400A2AA70 /* SplashScreenB.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SplashScreenB.sks; sourceTree = "<group>"; };
+		D166CB9C2817877300A2AA70 /* TitleScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScreen.sks; sourceTree = "<group>"; };
+		D166CB9E2817878200A2AA70 /* OptionsScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OptionsScreen.sks; sourceTree = "<group>"; };
+		D166CBA02817879100A2AA70 /* CreditsScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsScreen.sks; sourceTree = "<group>"; };
+		D166CBA22817879E00A2AA70 /* PlayLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlayLevel.sks; sourceTree = "<group>"; };
+		D166CBA4281787A800A2AA70 /* PlayLevelWin.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlayLevelWin.sks; sourceTree = "<group>"; };
+		D166CBA6281787B100A2AA70 /* PlayLevelLose.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlayLevelLose.sks; sourceTree = "<group>"; };
+		D166CBA8281787B900A2AA70 /* GameWin.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameWin.sks; sourceTree = "<group>"; };
+		D166CBAA281787C100A2AA70 /* GameLose.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameLose.sks; sourceTree = "<group>"; };
 		D193C6362812365700D4C4A0 /* Balloon Popper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Balloon Popper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D193C6392812365700D4C4A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D193C63B2812365700D4C4A0 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -26,6 +70,10 @@
 		D193C6432812365800D4C4A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D193C6462812365800D4C4A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D193C6482812365800D4C4A0 /* Balloon_Popper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Balloon_Popper.entitlements; sourceTree = "<group>"; };
+		D197CC3428178D57007DE072 /* Bios Beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Bios Beep.wav"; sourceTree = "<group>"; };
+		D197CC3628179286007DE072 /* GMScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMScene.swift; sourceTree = "<group>"; };
+		D1CB21E0281319780006696D /* Balloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balloon.swift; sourceTree = "<group>"; };
+		D1CB21E62815EE5F0006696D /* GameMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMaster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +87,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D14387D528175BBC005F5D64 /* Scene Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D14387D728175BFF005F5D64 /* SplashScreenAScene.swift */,
+				D14387D928175D46005F5D64 /* SplashScreenBScene.swift */,
+				D14387DB28175DE7005F5D64 /* TitleScreenScene.swift */,
+				D14387DD28175E45005F5D64 /* OptionsScreenScene.swift */,
+				D14C1C622817848600BCA0A6 /* CreditsScreenScene.swift */,
+				D14C1C642817853700BCA0A6 /* PlayLevelScene.swift */,
+				D14C1C662817857200BCA0A6 /* PlayLevelWinScene.swift */,
+				D14C1C68281785A300BCA0A6 /* PlayLevelLoseScene.swift */,
+				D14C1C6A281785C800BCA0A6 /* GameWinScene.swift */,
+				D14C1C6C281785E900BCA0A6 /* GameLoseScene.swift */,
+				D197CC3628179286007DE072 /* GMScene.swift */,
+			);
+			path = "Scene Controllers";
+			sourceTree = "<group>";
+		};
+		D14387D628175BDC005F5D64 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D1CB21E0281319780006696D /* Balloon.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		D166CB982817874800A2AA70 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				D193C63D2812365700D4C4A0 /* Actions.sks */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		D166CB992817874E00A2AA70 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				D166CB962817873B00A2AA70 /* SplashScreenA.sks */,
+				D193C63B2812365700D4C4A0 /* GameScene.sks */,
+				D166CB9A2817876400A2AA70 /* SplashScreenB.sks */,
+				D166CB9C2817877300A2AA70 /* TitleScreen.sks */,
+				D166CB9E2817878200A2AA70 /* OptionsScreen.sks */,
+				D166CBA02817879100A2AA70 /* CreditsScreen.sks */,
+				D166CBA22817879E00A2AA70 /* PlayLevel.sks */,
+				D166CBA4281787A800A2AA70 /* PlayLevelWin.sks */,
+				D166CBA6281787B100A2AA70 /* PlayLevelLose.sks */,
+				D166CBA8281787B900A2AA70 /* GameWin.sks */,
+				D166CBAA281787C100A2AA70 /* GameLose.sks */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		D193C62D2812365700D4C4A0 = {
 			isa = PBXGroup;
 			children = (
@@ -58,16 +158,44 @@
 		D193C6382812365700D4C4A0 /* Balloon Popper */ = {
 			isa = PBXGroup;
 			children = (
-				D193C6392812365700D4C4A0 /* AppDelegate.swift */,
-				D193C63B2812365700D4C4A0 /* GameScene.sks */,
-				D193C63D2812365700D4C4A0 /* Actions.sks */,
-				D193C63F2812365700D4C4A0 /* GameScene.swift */,
-				D193C6412812365700D4C4A0 /* ViewController.swift */,
+				D197CC3328178D45007DE072 /* Audio */,
+				D193C64F2812367000D4C4A0 /* Source */,
+				D193C64E2812366400D4C4A0 /* SKS */,
 				D193C6432812365800D4C4A0 /* Assets.xcassets */,
 				D193C6452812365800D4C4A0 /* Main.storyboard */,
 				D193C6482812365800D4C4A0 /* Balloon_Popper.entitlements */,
 			);
 			path = "Balloon Popper";
+			sourceTree = "<group>";
+		};
+		D193C64E2812366400D4C4A0 /* SKS */ = {
+			isa = PBXGroup;
+			children = (
+				D166CB992817874E00A2AA70 /* Scenes */,
+				D166CB982817874800A2AA70 /* Actions */,
+			);
+			path = SKS;
+			sourceTree = "<group>";
+		};
+		D193C64F2812367000D4C4A0 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D14387D628175BDC005F5D64 /* Entities */,
+				D14387D528175BBC005F5D64 /* Scene Controllers */,
+				D193C6412812365700D4C4A0 /* ViewController.swift */,
+				D193C63F2812365700D4C4A0 /* GameScene.swift */,
+				D193C6392812365700D4C4A0 /* AppDelegate.swift */,
+				D1CB21E62815EE5F0006696D /* GameMaster.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		D197CC3328178D45007DE072 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				D197CC3428178D57007DE072 /* Bios Beep.wav */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,8 +258,19 @@
 			files = (
 				D193C63C2812365700D4C4A0 /* GameScene.sks in Resources */,
 				D193C6442812365800D4C4A0 /* Assets.xcassets in Resources */,
+				D166CB9D2817877300A2AA70 /* TitleScreen.sks in Resources */,
 				D193C63E2812365700D4C4A0 /* Actions.sks in Resources */,
+				D166CBA5281787A800A2AA70 /* PlayLevelWin.sks in Resources */,
+				D166CB9F2817878200A2AA70 /* OptionsScreen.sks in Resources */,
+				D197CC3528178D57007DE072 /* Bios Beep.wav in Resources */,
+				D166CB9B2817876400A2AA70 /* SplashScreenB.sks in Resources */,
+				D166CBA32817879E00A2AA70 /* PlayLevel.sks in Resources */,
+				D166CBAB281787C100A2AA70 /* GameLose.sks in Resources */,
+				D166CBA9281787B900A2AA70 /* GameWin.sks in Resources */,
+				D166CB972817873B00A2AA70 /* SplashScreenA.sks in Resources */,
+				D166CBA7281787B100A2AA70 /* PlayLevelLose.sks in Resources */,
 				D193C6472812365800D4C4A0 /* Main.storyboard in Resources */,
+				D166CBA12817879100A2AA70 /* CreditsScreen.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,9 +281,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D14C1C672817857200BCA0A6 /* PlayLevelWinScene.swift in Sources */,
+				D1CB21E72815EE5F0006696D /* GameMaster.swift in Sources */,
+				D14C1C652817853700BCA0A6 /* PlayLevelScene.swift in Sources */,
+				D14387DC28175DE7005F5D64 /* TitleScreenScene.swift in Sources */,
 				D193C6422812365700D4C4A0 /* ViewController.swift in Sources */,
+				D14C1C6B281785C800BCA0A6 /* GameWinScene.swift in Sources */,
 				D193C6402812365700D4C4A0 /* GameScene.swift in Sources */,
+				D14387DA28175D46005F5D64 /* SplashScreenBScene.swift in Sources */,
+				D14C1C632817848600BCA0A6 /* CreditsScreenScene.swift in Sources */,
 				D193C63A2812365700D4C4A0 /* AppDelegate.swift in Sources */,
+				D197CC3728179286007DE072 /* GMScene.swift in Sources */,
+				D14C1C6D281785E900BCA0A6 /* GameLoseScene.swift in Sources */,
+				D1CB21E1281319780006696D /* Balloon.swift in Sources */,
+				D14387DE28175E45005F5D64 /* OptionsScreenScene.swift in Sources */,
+				D14387D828175BFF005F5D64 /* SplashScreenAScene.swift in Sources */,
+				D14C1C69281785A300BCA0A6 /* PlayLevelLoseScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

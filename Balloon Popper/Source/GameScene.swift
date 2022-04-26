@@ -9,6 +9,7 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
+    private var _score: Int = 0
     
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
@@ -16,6 +17,7 @@ class GameScene: SKScene {
     private var lastUpdateTime : TimeInterval = 0
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
+    private var squareShape : SKSpriteNode?
     
     override func sceneDidLoad() {
         
@@ -26,6 +28,11 @@ class GameScene: SKScene {
         if let label = self.label {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
+        }
+        
+        self.squareShape = self.childNode(withName: "//sampleSquare") as? SKSpriteNode
+        if let ss = self.squareShape {
+            ss.run(SKAction.moveBy(x: 0.0, y: 500.0, duration: 10.0))
         }
         
         // Create shape node to use during mouse interaction
@@ -108,5 +115,9 @@ class GameScene: SKScene {
         }
         
         self.lastUpdateTime = currentTime
+    }
+    
+    public func updateScore (_ ac: Int) {
+        self._score += ac
     }
 }
