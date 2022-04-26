@@ -95,7 +95,7 @@ class GameMaster {
                 if let sceneNode = scene.rootNode as! SplashScreenBScene? {
                     sceneNode.scaleMode = .aspectFill
                     if let v = self._vc.skView {
-                        let reveal = SKTransition.fade(withDuration: 3.0)
+                        let reveal = SKTransition.fade(withDuration: 8.0)
                         v.presentScene(sceneNode, transition: reveal)
                     }
                 }
