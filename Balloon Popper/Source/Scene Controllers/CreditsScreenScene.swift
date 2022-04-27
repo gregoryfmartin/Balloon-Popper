@@ -8,4 +8,4 @@
 import Foundation
 import SpriteKit
 
-class CreditsScreenScene : SKScene {}
+class CreditsScreenScene : GMScene {}

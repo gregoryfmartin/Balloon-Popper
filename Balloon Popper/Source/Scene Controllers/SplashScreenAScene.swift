@@ -30,6 +30,7 @@ class SplashScreenAScene : GMScene {
         
         if let label = self._labelOrgTitle {
             if !label.hasActions() {
+                self.run(SKAction.wait(forDuration: 6.0))
                 self.gameMaster.pfsm.enter(GameMaster.GMSSplashScreenB.self)
             }
         }

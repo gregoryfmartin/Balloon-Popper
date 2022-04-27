@@ -8,4 +8,4 @@
 import Foundation
 import SpriteKit
 
-class PlayLevelScene : SKScene {}
+class PlayLevelScene : GMScene {}

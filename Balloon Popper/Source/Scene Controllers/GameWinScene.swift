@@ -8,4 +8,4 @@
 import Foundation
 import SpriteKit
 
-class GameWinScene : SKScene {}
+class GameWinScene : GMScene {}

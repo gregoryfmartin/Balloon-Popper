@@ -59,6 +59,12 @@
 		D17E987C2818DB78004EA7E3 /* GameLose.sks in Resources */ = {isa = PBXBuildFile; fileRef = D166CBAA281787C100A2AA70 /* GameLose.sks */; };
 		D17E987D2818DB78004EA7E3 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = D193C63D2812365700D4C4A0 /* Actions.sks */; };
 		D1836CF62818DBFC00F3E066 /* GameMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB21E62815EE5F0006696D /* GameMaster.swift */; };
+		D1836CF82818DEBE00F3E066 /* Splash Screen B Jingle.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1836CF72818DEBE00F3E066 /* Splash Screen B Jingle.wav */; };
+		D1836CF92818DEBE00F3E066 /* Splash Screen B Jingle.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1836CF72818DEBE00F3E066 /* Splash Screen B Jingle.wav */; };
+		D1836CFC2818DFBE00F3E066 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1836CFB2818DFBE00F3E066 /* Media.xcassets */; };
+		D1836CFD2818DFBE00F3E066 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1836CFB2818DFBE00F3E066 /* Media.xcassets */; };
+		D1836CFF2818E11500F3E066 /* SplashScreenBear.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1836CFE2818E11500F3E066 /* SplashScreenBear.swift */; };
+		D1836D002818E11500F3E066 /* SplashScreenBear.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1836CFE2818E11500F3E066 /* SplashScreenBear.swift */; };
 		D193C63A2812365700D4C4A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D193C6392812365700D4C4A0 /* AppDelegate.swift */; };
 		D193C63C2812365700D4C4A0 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D193C63B2812365700D4C4A0 /* GameScene.sks */; };
 		D193C63E2812365700D4C4A0 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = D193C63D2812365700D4C4A0 /* Actions.sks */; };
@@ -102,6 +108,9 @@
 		D17E98092818D7F9004EA7E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D17E980B2818D7FA004EA7E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D17E980E2818D7FA004EA7E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D1836CF72818DEBE00F3E066 /* Splash Screen B Jingle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Splash Screen B Jingle.wav"; sourceTree = "<group>"; };
+		D1836CFB2818DFBE00F3E066 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		D1836CFE2818E11500F3E066 /* SplashScreenBear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenBear.swift; sourceTree = "<group>"; };
 		D193C6362812365700D4C4A0 /* Balloon Popper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Balloon Popper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D193C6392812365700D4C4A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D193C63B2812365700D4C4A0 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -157,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				D1CB21E0281319780006696D /* Balloon.swift */,
+				D1836CFE2818E11500F3E066 /* SplashScreenBear.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -202,6 +212,14 @@
 			path = "Balloon Popper iOS";
 			sourceTree = "<group>";
 		};
+		D1836CFA2818DFA900F3E066 /* Shared Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D1836CFB2818DFBE00F3E066 /* Media.xcassets */,
+			);
+			path = "Shared Assets";
+			sourceTree = "<group>";
+		};
 		D193C62D2812365700D4C4A0 = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +241,7 @@
 		D193C6382812365700D4C4A0 /* Balloon Popper */ = {
 			isa = PBXGroup;
 			children = (
+				D1836CFA2818DFA900F3E066 /* Shared Assets */,
 				D197CC3328178D45007DE072 /* Audio */,
 				D193C64F2812367000D4C4A0 /* Source */,
 				D193C64E2812366400D4C4A0 /* SKS */,
@@ -258,6 +277,7 @@
 		D197CC3328178D45007DE072 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				D1836CF72818DEBE00F3E066 /* Splash Screen B Jingle.wav */,
 				D197CC3428178D57007DE072 /* Bios Beep.wav */,
 			);
 			path = Audio;
@@ -354,9 +374,11 @@
 				D17E987B2818DB78004EA7E3 /* GameWin.sks in Resources */,
 				D17E987C2818DB78004EA7E3 /* GameLose.sks in Resources */,
 				D17E987D2818DB78004EA7E3 /* Actions.sks in Resources */,
+				D1836CF92818DEBE00F3E066 /* Splash Screen B Jingle.wav in Resources */,
 				D17E98712818DB6E004EA7E3 /* Bios Beep.wav in Resources */,
 				D17E980A2818D7F9004EA7E3 /* Main.storyboard in Resources */,
 				D17E980C2818D7FA004EA7E3 /* Assets.xcassets in Resources */,
+				D1836CFD2818DFBE00F3E066 /* Media.xcassets in Resources */,
 				D17E980F2818D7FA004EA7E3 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,12 +390,14 @@
 				D193C63C2812365700D4C4A0 /* GameScene.sks in Resources */,
 				D193C6442812365800D4C4A0 /* Assets.xcassets in Resources */,
 				D166CB9D2817877300A2AA70 /* TitleScreen.sks in Resources */,
+				D1836CFC2818DFBE00F3E066 /* Media.xcassets in Resources */,
 				D193C63E2812365700D4C4A0 /* Actions.sks in Resources */,
 				D166CBA5281787A800A2AA70 /* PlayLevelWin.sks in Resources */,
 				D166CB9F2817878200A2AA70 /* OptionsScreen.sks in Resources */,
 				D197CC3528178D57007DE072 /* Bios Beep.wav in Resources */,
 				D166CB9B2817876400A2AA70 /* SplashScreenB.sks in Resources */,
 				D166CBA32817879E00A2AA70 /* PlayLevel.sks in Resources */,
+				D1836CF82818DEBE00F3E066 /* Splash Screen B Jingle.wav in Resources */,
 				D166CBAB281787C100A2AA70 /* GameLose.sks in Resources */,
 				D166CBA9281787B900A2AA70 /* GameWin.sks in Resources */,
 				D166CB972817873B00A2AA70 /* SplashScreenA.sks in Resources */,
@@ -399,6 +423,7 @@
 				D17E986A2818DB53004EA7E3 /* CreditsScreenScene.swift in Sources */,
 				D17E986B2818DB53004EA7E3 /* PlayLevelScene.swift in Sources */,
 				D17E986C2818DB53004EA7E3 /* PlayLevelWinScene.swift in Sources */,
+				D1836D002818E11500F3E066 /* SplashScreenBear.swift in Sources */,
 				D17E986D2818DB53004EA7E3 /* PlayLevelLoseScene.swift in Sources */,
 				D17E986E2818DB53004EA7E3 /* GameWinScene.swift in Sources */,
 				D17E986F2818DB53004EA7E3 /* GameLoseScene.swift in Sources */,
@@ -422,6 +447,7 @@
 				D193C6402812365700D4C4A0 /* GameScene.swift in Sources */,
 				D14387DA28175D46005F5D64 /* SplashScreenBScene.swift in Sources */,
 				D14C1C632817848600BCA0A6 /* CreditsScreenScene.swift in Sources */,
+				D1836CFF2818E11500F3E066 /* SplashScreenBear.swift in Sources */,
 				D193C63A2812365700D4C4A0 /* AppDelegate.swift in Sources */,
 				D197CC3728179286007DE072 /* GMScene.swift in Sources */,
 				D14C1C6D281785E900BCA0A6 /* GameLoseScene.swift in Sources */,
