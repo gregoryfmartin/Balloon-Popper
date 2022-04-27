@@ -267,10 +267,10 @@ class Balloon : SKSpriteNode {
         ]
         
         self._actionsTable[.popped] = SKAction.run {
-            self._sceneRef?.updateScore(5)
+//            self._sceneRef?.updateScore(5)
         }
         self._actionsTable[.outOfBounds] = SKAction.run {
-            self._sceneRef?.updateScore(-5)
+//            self._sceneRef?.updateScore(-5)
         }
         self._actionsTable[.floating] = SKAction.repeatForever(
             SKAction.group([

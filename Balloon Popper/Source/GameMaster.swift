@@ -7,14 +7,15 @@
 
 import Foundation
 import GameplayKit
+import SpriteKit
 
 class GameMasterStates : GKState {
     fileprivate var _gm: GameMaster
-    fileprivate var _vc: ViewController
+    fileprivate var _skv: SKView
     
-    init (_ gm: GameMaster, _ vc: ViewController) {
+    init (_ gm: GameMaster, _ skv: SKView) {
         self._gm = gm
-        self._vc = vc
+        self._skv = skv
     }
 }
 
@@ -72,10 +73,8 @@ class GameMaster {
             if let scene = GKScene(fileNamed: "SplashScreenA") {
                 if let sceneNode = scene.rootNode as! SplashScreenAScene? {
                     sceneNode.scaleMode = .aspectFill
-                    if let v = self._vc.skView {
-                        let reveal = SKTransition.fade(withDuration: 0.5)
-                        v.presentScene(sceneNode, transition: reveal)
-                    }
+                    let reveal = SKTransition.fade(withDuration: 0.5)
+                    self._skv.presentScene(sceneNode, transition: reveal)
                 }
             }
         }
@@ -94,10 +93,8 @@ class GameMaster {
             if let scene = GKScene(fileNamed: "SplashScreenB") {
                 if let sceneNode = scene.rootNode as! SplashScreenBScene? {
                     sceneNode.scaleMode = .aspectFill
-                    if let v = self._vc.skView {
-                        let reveal = SKTransition.fade(withDuration: 8.0)
-                        v.presentScene(sceneNode, transition: reveal)
-                    }
+                    let reveal = SKTransition.fade(withDuration: 0.5)
+                    self._skv.presentScene(sceneNode, transition: reveal)
                 }
             }
         }
@@ -114,10 +111,8 @@ class GameMaster {
             if let scene = GKScene(fileNamed: "TitleScreen") {
                 if let sceneNode = scene.rootNode as! TitleScreenScene? {
                     sceneNode.scaleMode = .aspectFill
-                    if let v = self._vc.skView {
-                        let reveal = SKTransition.fade(withDuration: 3.0)
-                        v.presentScene(sceneNode, transition: reveal)
-                    }
+                    let reveal = SKTransition.fade(withDuration: 0.5)
+                    self._skv.presentScene(sceneNode, transition: reveal)
                 }
             }
         }
@@ -132,10 +127,8 @@ class GameMaster {
             if let scene = GKScene(fileNamed: "OptionsScreen") {
                 if let sceneNode = scene.rootNode as! OptionsScreenScene? {
                     sceneNode.scaleMode = .aspectFill
-                    if let v = self._vc.skView {
-                        let reveal = SKTransition.fade(withDuration: 3.0)
-                        v.presentScene(sceneNode, transition: reveal)
-                    }
+                    let reveal = SKTransition.fade(withDuration: 0.5)
+                    self._skv.presentScene(sceneNode, transition: reveal)
                 }
             }
         }
@@ -150,10 +143,8 @@ class GameMaster {
             if let scene = GKScene(fileNamed: "CreditsScreen") {
                 if let sceneNode = scene.rootNode as! CreditsScreenScene? {
                     sceneNode.scaleMode = .aspectFill
-                    if let v = self._vc.skView {
-                        let reveal = SKTransition.fade(withDuration: 3.0)
-                        v.presentScene(sceneNode, transition: reveal)
-                    }
+                    let reveal = SKTransition.fade(withDuration: 0.5)
+                    self._skv.presentScene(sceneNode, transition: reveal)
                 }
             }
         }
@@ -170,10 +161,8 @@ class GameMaster {
             if let scene = GKScene(fileNamed: "PlayLevel") {
                 if let sceneNode = scene.rootNode as! CreditsScreenScene? {
                     sceneNode.scaleMode = .aspectFill
-                    if let v = self._vc.skView {
-                        let reveal = SKTransition.fade(withDuration: 3.0)
-                        v.presentScene(sceneNode, transition: reveal)
-                    }
+                    let reveal = SKTransition.fade(withDuration: 0.5)
+                    self._skv.presentScene(sceneNode, transition: reveal)
                 }
             }
         }
@@ -189,10 +178,8 @@ class GameMaster {
             if let scene = GKScene(fileNamed: "PlayLevelWin") {
                 if let sceneNode = scene.rootNode as! CreditsScreenScene? {
                     sceneNode.scaleMode = .aspectFill
-                    if let v = self._vc.skView {
-                        let reveal = SKTransition.fade(withDuration: 3.0)
-                        v.presentScene(sceneNode, transition: reveal)
-                    }
+                    let reveal = SKTransition.fade(withDuration: 0.5)
+                    self._skv.presentScene(sceneNode, transition: reveal)
                 }
             }
         }
@@ -208,10 +195,8 @@ class GameMaster {
             if let scene = GKScene(fileNamed: "PlayLevelLose") {
                 if let sceneNode = scene.rootNode as! CreditsScreenScene? {
                     sceneNode.scaleMode = .aspectFill
-                    if let v = self._vc.skView {
-                        let reveal = SKTransition.fade(withDuration: 3.0)
-                        v.presentScene(sceneNode, transition: reveal)
-                    }
+                    let reveal = SKTransition.fade(withDuration: 0.5)
+                    self._skv.presentScene(sceneNode, transition: reveal)
                 }
             }
         }
@@ -226,10 +211,8 @@ class GameMaster {
             if let scene = GKScene(fileNamed: "GameWin") {
                 if let sceneNode = scene.rootNode as! CreditsScreenScene? {
                     sceneNode.scaleMode = .aspectFill
-                    if let v = self._vc.skView {
-                        let reveal = SKTransition.fade(withDuration: 3.0)
-                        v.presentScene(sceneNode, transition: reveal)
-                    }
+                    let reveal = SKTransition.fade(withDuration: 0.5)
+                    self._skv.presentScene(sceneNode, transition: reveal)
                 }
             }
         }
@@ -244,32 +227,35 @@ class GameMaster {
             if let scene = GKScene(fileNamed: "GameLose") {
                 if let sceneNode = scene.rootNode as! CreditsScreenScene? {
                     sceneNode.scaleMode = .aspectFill
-                    if let v = self._vc.skView {
-                        let reveal = SKTransition.fade(withDuration: 3.0)
-                        v.presentScene(sceneNode, transition: reveal)
-                    }
+                    let reveal = SKTransition.fade(withDuration: 0.5)
+                    self._skv.presentScene(sceneNode, transition: reveal)
                 }
             }
         }
     }
     
-    private func buildFsms (_ vc: ViewController) {
+    private func buildFsms (_ skv: SKView) {
         self._pfsm = GKStateMachine(states: [
-            GMSSplashScreenA(self, vc),
-            GMSSplashScreenB(self, vc),
-            GMSTitleScreen(self, vc),
-            GMSOptionsScreen(self, vc),
-            GMSCreditsScreen(self, vc),
-            GMSPlayLevel(self, vc),
-            GMSPlayLevelWin(self, vc),
-            GMSPlayLevelLose(self, vc),
-            GMSGameWin(self, vc),
-            GMSGameLose(self, vc)
+            GMSSplashScreenA(self, skv),
+            GMSSplashScreenB(self, skv),
+            GMSTitleScreen(self, skv),
+            GMSOptionsScreen(self, skv),
+            GMSCreditsScreen(self, skv),
+            GMSPlayLevel(self, skv),
+            GMSPlayLevelWin(self, skv),
+            GMSPlayLevelLose(self, skv),
+            GMSGameWin(self, skv),
+            GMSGameLose(self, skv)
         ])
     }
     
-    init (_ vc: ViewController) {
-        self.buildFsms(vc)
+//    init (_ vc: ViewController) {
+//        self.buildFsms(vc)
+//        self._pfsm.enter(GMSSplashScreenA.self)
+//    }
+    
+    init (_ skv: SKView) {
+        self.buildFsms(skv)
         self._pfsm.enter(GMSSplashScreenA.self)
     }
 }

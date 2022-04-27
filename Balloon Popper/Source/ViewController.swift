@@ -18,7 +18,7 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         print("viewDidLoad called")
         
-        self.gameMaster = GameMaster(self)
+        self.gameMaster = GameMaster(self.skView)
         if let v = self.skView.scene as? GMScene {
             v.gameMaster = self.gameMaster!
         }

@@ -19,6 +19,8 @@ class SplashScreenAScene : GMScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        super.update(currentTime)
+        
         if self._lastUpdateTime == 0 {
             self._lastUpdateTime = currentTime
         }
