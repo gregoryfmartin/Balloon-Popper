@@ -6,6 +6,5 @@
 //
 
 import Foundation
-import SpriteKit
 
 class TitleScreenScene : GMScene {}

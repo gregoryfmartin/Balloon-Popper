@@ -26,7 +26,7 @@ class SplashScreenBScene : GMScene {
         let dt = currentTime - self._lastUpdateTime
         
         self.gameMaster.pfsm.update(deltaTime: dt)
-        self._splashScreenBear?.update(dt)
+//        self._splashScreenBear?.update(dt)
         
         self._lastUpdateTime = currentTime
     }

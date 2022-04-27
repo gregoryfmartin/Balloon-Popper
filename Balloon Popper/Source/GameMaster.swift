@@ -86,6 +86,8 @@ class GameMaster {
     }
     
     class GMSSplashScreenB : GameMasterStates {
+        private var _cumulativeUpdateTime: TimeInterval = 0.0
+        
         override func isValidNextState(_ stateClass: AnyClass) -> Bool {
             return stateClass == GMSTitleScreen.self
         }
@@ -98,6 +100,15 @@ class GameMaster {
                     let reveal = SKTransition.fade(withDuration: 0.5)
                     self._skv.presentScene(sceneNode, transition: reveal)
                 }
+            }
+        }
+        
+        override func update(deltaTime seconds: TimeInterval) {
+            super.update(deltaTime: seconds)
+            self._cumulativeUpdateTime += seconds
+            
+            if self._cumulativeUpdateTime >= 7.0 {
+                self.stateMachine?.enter(GMSTitleScreen.self)
             }
         }
     }
