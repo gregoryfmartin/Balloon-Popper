@@ -52,10 +52,10 @@ class SplashScreenBear : SKSpriteNode {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.buildFrames()
-        self.buildAnimations()
-        self.buildActions()
-        self.buildFsm()
+//        self.buildFrames()
+//        self.buildAnimations()
+//        self.buildActions()
+//        self.buildFsm()
     }
     
     private func buildFrames () {
@@ -67,7 +67,7 @@ class SplashScreenBear : SKSpriteNode {
     }
     
     private func buildAnimations () {
-        self._animationsTable[.walkEast] = SKAction.repeatForever(SKAction.animate(withNormalTextures: self._walkEastFrames, timePerFrame: 1.0, resize: false, restore: true))
+        self._animationsTable[.walkEast] = SKAction.repeatForever(SKAction.animate(withNormalTextures: self._walkEastFrames, timePerFrame: 0.12, resize: false, restore: true))
     }
     
     private func buildActions () {
