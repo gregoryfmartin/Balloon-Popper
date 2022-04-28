@@ -80,6 +80,8 @@
 		D1B2AE69281A2395001DAEE7 /* Title Screen Music B.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1B2AE67281A2395001DAEE7 /* Title Screen Music B.wav */; };
 		D1B2AE6B281A258E001DAEE7 /* Options Screen Music A.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1B2AE6A281A258E001DAEE7 /* Options Screen Music A.wav */; };
 		D1B2AE6C281A258E001DAEE7 /* Options Screen Music A.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1B2AE6A281A258E001DAEE7 /* Options Screen Music A.wav */; };
+		D1B2AE6E281A2873001DAEE7 /* Credits Screen Music A.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1B2AE6D281A2873001DAEE7 /* Credits Screen Music A.wav */; };
+		D1B2AE6F281A2873001DAEE7 /* Credits Screen Music A.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1B2AE6D281A2873001DAEE7 /* Credits Screen Music A.wav */; };
 		D1CB21E1281319780006696D /* Balloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB21E0281319780006696D /* Balloon.swift */; };
 		D1CB21E72815EE5F0006696D /* GameMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB21E62815EE5F0006696D /* GameMaster.swift */; };
 /* End PBXBuildFile section */
@@ -131,6 +133,7 @@
 		D1B2AE64281997F7001DAEE7 /* Title Screen Music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Title Screen Music.wav"; sourceTree = "<group>"; };
 		D1B2AE67281A2395001DAEE7 /* Title Screen Music B.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Title Screen Music B.wav"; sourceTree = "<group>"; };
 		D1B2AE6A281A258E001DAEE7 /* Options Screen Music A.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Options Screen Music A.wav"; sourceTree = "<group>"; };
+		D1B2AE6D281A2873001DAEE7 /* Credits Screen Music A.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Credits Screen Music A.wav"; sourceTree = "<group>"; };
 		D1CB21E0281319780006696D /* Balloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balloon.swift; sourceTree = "<group>"; };
 		D1CB21E62815EE5F0006696D /* GameMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMaster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -291,6 +294,7 @@
 				D1B2AE64281997F7001DAEE7 /* Title Screen Music.wav */,
 				D1836CF72818DEBE00F3E066 /* Splash Screen B Jingle.wav */,
 				D197CC3428178D57007DE072 /* Bios Beep.wav */,
+				D1B2AE6D281A2873001DAEE7 /* Credits Screen Music A.wav */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -377,6 +381,7 @@
 				D17E98722818DB78004EA7E3 /* SplashScreenA.sks in Resources */,
 				D17E98732818DB78004EA7E3 /* GameScene.sks in Resources */,
 				D1B2AE6C281A258E001DAEE7 /* Options Screen Music A.wav in Resources */,
+				D1B2AE6F281A2873001DAEE7 /* Credits Screen Music A.wav in Resources */,
 				D17E98742818DB78004EA7E3 /* SplashScreenB.sks in Resources */,
 				D17E98752818DB78004EA7E3 /* TitleScreen.sks in Resources */,
 				D17E98762818DB78004EA7E3 /* OptionsScreen.sks in Resources */,
@@ -422,6 +427,7 @@
 				D166CBA7281787B100A2AA70 /* PlayLevelLose.sks in Resources */,
 				D193C6472812365800D4C4A0 /* Main.storyboard in Resources */,
 				D166CBA12817879100A2AA70 /* CreditsScreen.sks in Resources */,
+				D1B2AE6E281A2873001DAEE7 /* Credits Screen Music A.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

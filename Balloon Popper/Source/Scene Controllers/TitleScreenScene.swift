@@ -40,6 +40,9 @@ class TitleScreenScene : GMScene {
         if frontTouchedNode == "labelOptions" {
             self.gameMaster.pfsm.enter(GameMaster.GMSOptionsScreen.self)
         }
+        if frontTouchedNode == "labelCredits" {
+            self.gameMaster.pfsm.enter(GameMaster.GMSCreditsScreen.self)
+        }
         
         print("Touched node: \(String(describing: frontTouchedNode))")
     }
