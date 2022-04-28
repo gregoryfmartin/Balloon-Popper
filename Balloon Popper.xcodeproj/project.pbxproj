@@ -76,6 +76,10 @@
 		D197CC3728179286007DE072 /* GMScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197CC3628179286007DE072 /* GMScene.swift */; };
 		D1B2AE65281997F7001DAEE7 /* Title Screen Music.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1B2AE64281997F7001DAEE7 /* Title Screen Music.wav */; };
 		D1B2AE66281997F7001DAEE7 /* Title Screen Music.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1B2AE64281997F7001DAEE7 /* Title Screen Music.wav */; };
+		D1B2AE68281A2395001DAEE7 /* Title Screen Music B.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1B2AE67281A2395001DAEE7 /* Title Screen Music B.wav */; };
+		D1B2AE69281A2395001DAEE7 /* Title Screen Music B.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1B2AE67281A2395001DAEE7 /* Title Screen Music B.wav */; };
+		D1B2AE6B281A258E001DAEE7 /* Options Screen Music A.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1B2AE6A281A258E001DAEE7 /* Options Screen Music A.wav */; };
+		D1B2AE6C281A258E001DAEE7 /* Options Screen Music A.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1B2AE6A281A258E001DAEE7 /* Options Screen Music A.wav */; };
 		D1CB21E1281319780006696D /* Balloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB21E0281319780006696D /* Balloon.swift */; };
 		D1CB21E72815EE5F0006696D /* GameMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB21E62815EE5F0006696D /* GameMaster.swift */; };
 /* End PBXBuildFile section */
@@ -125,6 +129,8 @@
 		D197CC3428178D57007DE072 /* Bios Beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Bios Beep.wav"; sourceTree = "<group>"; };
 		D197CC3628179286007DE072 /* GMScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMScene.swift; sourceTree = "<group>"; };
 		D1B2AE64281997F7001DAEE7 /* Title Screen Music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Title Screen Music.wav"; sourceTree = "<group>"; };
+		D1B2AE67281A2395001DAEE7 /* Title Screen Music B.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Title Screen Music B.wav"; sourceTree = "<group>"; };
+		D1B2AE6A281A258E001DAEE7 /* Options Screen Music A.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Options Screen Music A.wav"; sourceTree = "<group>"; };
 		D1CB21E0281319780006696D /* Balloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balloon.swift; sourceTree = "<group>"; };
 		D1CB21E62815EE5F0006696D /* GameMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMaster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -280,6 +286,8 @@
 		D197CC3328178D45007DE072 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				D1B2AE6A281A258E001DAEE7 /* Options Screen Music A.wav */,
+				D1B2AE67281A2395001DAEE7 /* Title Screen Music B.wav */,
 				D1B2AE64281997F7001DAEE7 /* Title Screen Music.wav */,
 				D1836CF72818DEBE00F3E066 /* Splash Screen B Jingle.wav */,
 				D197CC3428178D57007DE072 /* Bios Beep.wav */,
@@ -368,6 +376,7 @@
 			files = (
 				D17E98722818DB78004EA7E3 /* SplashScreenA.sks in Resources */,
 				D17E98732818DB78004EA7E3 /* GameScene.sks in Resources */,
+				D1B2AE6C281A258E001DAEE7 /* Options Screen Music A.wav in Resources */,
 				D17E98742818DB78004EA7E3 /* SplashScreenB.sks in Resources */,
 				D17E98752818DB78004EA7E3 /* TitleScreen.sks in Resources */,
 				D17E98762818DB78004EA7E3 /* OptionsScreen.sks in Resources */,
@@ -383,6 +392,7 @@
 				D17E98712818DB6E004EA7E3 /* Bios Beep.wav in Resources */,
 				D17E980A2818D7F9004EA7E3 /* Main.storyboard in Resources */,
 				D17E980C2818D7FA004EA7E3 /* Assets.xcassets in Resources */,
+				D1B2AE69281A2395001DAEE7 /* Title Screen Music B.wav in Resources */,
 				D1836CFD2818DFBE00F3E066 /* Media.xcassets in Resources */,
 				D17E980F2818D7FA004EA7E3 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -393,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D193C63C2812365700D4C4A0 /* GameScene.sks in Resources */,
+				D1B2AE6B281A258E001DAEE7 /* Options Screen Music A.wav in Resources */,
 				D193C6442812365800D4C4A0 /* Assets.xcassets in Resources */,
 				D166CB9D2817877300A2AA70 /* TitleScreen.sks in Resources */,
 				D1B2AE65281997F7001DAEE7 /* Title Screen Music.wav in Resources */,
@@ -404,6 +415,7 @@
 				D166CB9B2817876400A2AA70 /* SplashScreenB.sks in Resources */,
 				D166CBA32817879E00A2AA70 /* PlayLevel.sks in Resources */,
 				D1836CF82818DEBE00F3E066 /* Splash Screen B Jingle.wav in Resources */,
+				D1B2AE68281A2395001DAEE7 /* Title Screen Music B.wav in Resources */,
 				D166CBAB281787C100A2AA70 /* GameLose.sks in Resources */,
 				D166CBA9281787B900A2AA70 /* GameWin.sks in Resources */,
 				D166CB972817873B00A2AA70 /* SplashScreenA.sks in Resources */,
