@@ -53,10 +53,14 @@ class TitleScreenScene : GMScene {
                     self.gameMaster.pfsm.enter(GameMaster.GMSOptionsScreen.self)
                 }
             ]))
-//            self.gameMaster.pfsm.enter(GameMaster.GMSOptionsScreen.self)
         }
         if frontTouchedNode == "labelCredits" {
-            self.gameMaster.pfsm.enter(GameMaster.GMSCreditsScreen.self)
+            self._labelCredits?.run(SKAction.sequence([
+                SKAction.playSoundFileNamed("Voice Credits", waitForCompletion: true),
+                SKAction.run {
+                    self.gameMaster.pfsm.enter(GameMaster.GMSCreditsScreen.self)
+                }
+            ]))
         }
         
         print("Touched node: \(String(describing: frontTouchedNode))")
