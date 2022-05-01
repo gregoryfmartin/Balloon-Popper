@@ -47,19 +47,25 @@ class TitleScreenScene : GMScene {
         let frontTouchedNode = atPoint(location).name
         
         if frontTouchedNode == "labelOptions" {
-            self._labelOptions?.run(SKAction.sequence([
-                SKAction.playSoundFileNamed("Voice Options", waitForCompletion: true),
-                SKAction.run {
-                    self.gameMaster.pfsm.enter(GameMaster.GMSOptionsScreen.self)
-                }
+            self._labelOptions?.run(SKAction.group([
+                SKAction.repeatForever(SKAction.init(named: "TitleItemFlash")!),
+                SKAction.sequence([
+                    SKAction.playSoundFileNamed("Voice Options", waitForCompletion: true),
+                    SKAction.run {
+                        self.gameMaster.pfsm.enter(GameMaster.GMSOptionsScreen.self)
+                    }
+                ])
             ]))
         }
         if frontTouchedNode == "labelCredits" {
-            self._labelCredits?.run(SKAction.sequence([
-                SKAction.playSoundFileNamed("Voice Credits", waitForCompletion: true),
-                SKAction.run {
-                    self.gameMaster.pfsm.enter(GameMaster.GMSCreditsScreen.self)
-                }
+            self._labelCredits?.run(SKAction.group([
+                SKAction.repeatForever(SKAction.init(named: "TitleItemFlash")!),
+                SKAction.sequence([
+                    SKAction.playSoundFileNamed("Voice Credits", waitForCompletion: true),
+                    SKAction.run {
+                        self.gameMaster.pfsm.enter(GameMaster.GMSCreditsScreen.self)
+                    }
+                ])
             ]))
         }
         
