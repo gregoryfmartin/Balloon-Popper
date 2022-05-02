@@ -5,13 +5,25 @@
 //  Created by Gregory Frank Martin on 4/25/22.
 //
 
-import Foundation
 import SpriteKit
 
+///
+/// GMScene is an abstraction of SKScene, providing certain extensions that I need for this game engine.
+///
 class GMScene : SKScene {
+    ///
+    /// An instance of GameMaster. Each scene will need a reference to the instance created in the ViewController.
+    ///
     private var _gameMaster: GameMaster? = nil
+    
+    ///
+    /// Used for measuring delta time for FPS.
+    ///
     private var _lastUpdateTime: TimeInterval = 0.0
     
+    ///
+    /// Public interface for the private member of the same name.
+    ///
     public var gameMaster: GameMaster {
         get {
             return self._gameMaster!
@@ -21,6 +33,9 @@ class GMScene : SKScene {
         }
     }
     
+    ///
+    /// Public interface for the private member of the same name.
+    ///
     public var lastUpdateTime: TimeInterval {
         get {
             return self._lastUpdateTime
@@ -34,6 +49,9 @@ class GMScene : SKScene {
         super.init(coder: aDecoder)
     }
     
+    ///
+    /// Does nothing out of the ordinary except for calculating delta time and ensuring that the Primary FSM in the GameMaster is able to run its update function using the delta time.
+    ///
     override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
         

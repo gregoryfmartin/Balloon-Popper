@@ -65,11 +65,11 @@ class GameMaster {
     }
     
     class GMSSplashScreenA : GameMasterStates {
-        override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        override func isValidNextState (_ stateClass: AnyClass) -> Bool {
             return stateClass == GMSSplashScreenB.self
         }
         
-        override func didEnter(from previousState: GKState?) {
+        override func didEnter (from previousState: GKState?) {
             if let scene = GKScene(fileNamed: "SplashScreenA") {
                 if let sceneNode = scene.rootNode as! SplashScreenAScene? {
                     sceneNode.scaleMode = .aspectFill
@@ -80,7 +80,7 @@ class GameMaster {
             }
         }
         
-        override func update(deltaTime seconds: TimeInterval) {
+        override func update (deltaTime seconds: TimeInterval) {
             super.update(deltaTime: seconds)
         }
     }
@@ -88,11 +88,11 @@ class GameMaster {
     class GMSSplashScreenB : GameMasterStates {
         private var _cumulativeUpdateTime: TimeInterval = 0.0
         
-        override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        override func isValidNextState (_ stateClass: AnyClass) -> Bool {
             return stateClass == GMSTitleScreen.self
         }
         
-        override func didEnter(from previousState: GKState?) {
+        override func didEnter (from previousState: GKState?) {
             if let scene = GKScene(fileNamed: "SplashScreenB") {
                 if let sceneNode = scene.rootNode as! SplashScreenBScene? {
                     sceneNode.scaleMode = .aspectFill
@@ -103,7 +103,7 @@ class GameMaster {
             }
         }
         
-        override func update(deltaTime seconds: TimeInterval) {
+        override func update (deltaTime seconds: TimeInterval) {
             super.update(deltaTime: seconds)
             self._cumulativeUpdateTime += seconds
             
@@ -114,13 +114,13 @@ class GameMaster {
     }
     
     class GMSTitleScreen : GameMasterStates {
-        override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        override func isValidNextState (_ stateClass: AnyClass) -> Bool {
             return stateClass == GMSOptionsScreen.self ||
             stateClass == GMSCreditsScreen.self ||
             stateClass == GMSPlayLevel.self
         }
         
-        override func didEnter(from previousState: GKState?) {
+        override func didEnter (from previousState: GKState?) {
             if let scene = GKScene(fileNamed: "TitleScreen") {
                 if let sceneNode = scene.rootNode as! TitleScreenScene? {
                     sceneNode.scaleMode = .aspectFill
@@ -133,11 +133,11 @@ class GameMaster {
     }
     
     class GMSOptionsScreen : GameMasterStates {
-        override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        override func isValidNextState (_ stateClass: AnyClass) -> Bool {
             return stateClass == GMSTitleScreen.self
         }
         
-        override func didEnter(from previousState: GKState?) {
+        override func didEnter (from previousState: GKState?) {
             if let scene = GKScene(fileNamed: "OptionsScreen") {
                 if let sceneNode = scene.rootNode as! OptionsScreenScene? {
                     sceneNode.scaleMode = .aspectFill
@@ -150,11 +150,11 @@ class GameMaster {
     }
     
     class GMSCreditsScreen : GameMasterStates {
-        override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        override func isValidNextState (_ stateClass: AnyClass) -> Bool {
             return stateClass == GMSTitleScreen.self
         }
         
-        override func didEnter(from previousState: GKState?) {
+        override func didEnter (from previousState: GKState?) {
             if let scene = GKScene(fileNamed: "CreditsScreen") {
                 if let sceneNode = scene.rootNode as! CreditsScreenScene? {
                     sceneNode.scaleMode = .aspectFill
@@ -167,13 +167,13 @@ class GameMaster {
     }
     
     class GMSPlayLevel : GameMasterStates {
-        override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        override func isValidNextState (_ stateClass: AnyClass) -> Bool {
             return stateClass == GMSPlayLevelWin.self ||
             stateClass == GMSPlayLevelLose.self ||
             stateClass == GMSTitleScreen.self
         }
         
-        override func didEnter(from previousState: GKState?) {
+        override func didEnter (from previousState: GKState?) {
             if let scene = GKScene(fileNamed: "PlayLevel") {
                 if let sceneNode = scene.rootNode as! CreditsScreenScene? {
                     sceneNode.scaleMode = .aspectFill
@@ -186,12 +186,12 @@ class GameMaster {
     }
     
     class GMSPlayLevelWin : GameMasterStates {
-        override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        override func isValidNextState (_ stateClass: AnyClass) -> Bool {
             return stateClass == GMSPlayLevel.self ||
             stateClass == GMSGameWin.self
         }
         
-        override func didEnter(from previousState: GKState?) {
+        override func didEnter (from previousState: GKState?) {
             if let scene = GKScene(fileNamed: "PlayLevelWin") {
                 if let sceneNode = scene.rootNode as! CreditsScreenScene? {
                     sceneNode.scaleMode = .aspectFill
@@ -204,12 +204,12 @@ class GameMaster {
     }
     
     class GMSPlayLevelLose : GameMasterStates {
-        override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        override func isValidNextState (_ stateClass: AnyClass) -> Bool {
             return stateClass == GMSPlayLevel.self ||
             stateClass == GMSGameLose.self
         }
         
-        override func didEnter(from previousState: GKState?) {
+        override func didEnter (from previousState: GKState?) {
             if let scene = GKScene(fileNamed: "PlayLevelLose") {
                 if let sceneNode = scene.rootNode as! CreditsScreenScene? {
                     sceneNode.scaleMode = .aspectFill
@@ -222,11 +222,11 @@ class GameMaster {
     }
     
     class GMSGameWin : GameMasterStates {
-        override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        override func isValidNextState (_ stateClass: AnyClass) -> Bool {
             return stateClass == GMSCreditsScreen.self
         }
         
-        override func didEnter(from previousState: GKState?) {
+        override func didEnter (from previousState: GKState?) {
             if let scene = GKScene(fileNamed: "GameWin") {
                 if let sceneNode = scene.rootNode as! CreditsScreenScene? {
                     sceneNode.scaleMode = .aspectFill
@@ -239,11 +239,11 @@ class GameMaster {
     }
     
     class GMSGameLose : GameMasterStates {
-        override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        override func isValidNextState (_ stateClass: AnyClass) -> Bool {
             return stateClass == GMSTitleScreen.self
         }
         
-        override func didEnter(from previousState: GKState?) {
+        override func didEnter (from previousState: GKState?) {
             if let scene = GKScene(fileNamed: "GameLose") {
                 if let sceneNode = scene.rootNode as! CreditsScreenScene? {
                     sceneNode.scaleMode = .aspectFill
