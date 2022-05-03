@@ -102,6 +102,8 @@
 		D1B2AE6E281A2873001DAEE7 /* Credits Screen Music A.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1B2AE6D281A2873001DAEE7 /* Credits Screen Music A.wav */; };
 		D1B2AE6F281A2873001DAEE7 /* Credits Screen Music A.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1B2AE6D281A2873001DAEE7 /* Credits Screen Music A.wav */; };
 		D1C99674281EEE1A00C42039 /* Title Screen Music B.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1B2AE67281A2395001DAEE7 /* Title Screen Music B.wav */; };
+		D1C99677281F678E00C42039 /* MathMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C99676281F678E00C42039 /* MathMaster.swift */; };
+		D1C99678281F678E00C42039 /* MathMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C99676281F678E00C42039 /* MathMaster.swift */; };
 		D1CB21E1281319780006696D /* Balloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB21E0281319780006696D /* Balloon.swift */; };
 		D1CB21E72815EE5F0006696D /* GameMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB21E62815EE5F0006696D /* GameMaster.swift */; };
 /* End PBXBuildFile section */
@@ -164,6 +166,7 @@
 		D1B2AE67281A2395001DAEE7 /* Title Screen Music B.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Title Screen Music B.wav"; sourceTree = "<group>"; };
 		D1B2AE6A281A258E001DAEE7 /* Options Screen Music A.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Options Screen Music A.wav"; sourceTree = "<group>"; };
 		D1B2AE6D281A2873001DAEE7 /* Credits Screen Music A.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Credits Screen Music A.wav"; sourceTree = "<group>"; };
+		D1C99676281F678E00C42039 /* MathMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathMaster.swift; sourceTree = "<group>"; };
 		D1CB21E0281319780006696D /* Balloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balloon.swift; sourceTree = "<group>"; };
 		D1CB21E62815EE5F0006696D /* GameMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMaster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -343,12 +346,12 @@
 		D193C64F2812367000D4C4A0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				D1C99675281F677800C42039 /* Core */,
 				D14387D628175BDC005F5D64 /* Entities */,
 				D14387D528175BBC005F5D64 /* Scene Controllers */,
 				D193C6412812365700D4C4A0 /* ViewController.swift */,
 				D193C63F2812365700D4C4A0 /* GameScene.swift */,
 				D193C6392812365700D4C4A0 /* AppDelegate.swift */,
-				D1CB21E62815EE5F0006696D /* GameMaster.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -361,6 +364,15 @@
 				D182CEDE281CD82D000B7F74 /* Voice */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		D1C99675281F677800C42039 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D1CB21E62815EE5F0006696D /* GameMaster.swift */,
+				D1C99676281F678E00C42039 /* MathMaster.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -529,6 +541,7 @@
 				D17E98682818DB53004EA7E3 /* TitleScreenScene.swift in Sources */,
 				D17E98692818DB53004EA7E3 /* OptionsScreenScene.swift in Sources */,
 				D17E986A2818DB53004EA7E3 /* CreditsScreenScene.swift in Sources */,
+				D1C99678281F678E00C42039 /* MathMaster.swift in Sources */,
 				D17E986B2818DB53004EA7E3 /* PlayLevelScene.swift in Sources */,
 				D17E986C2818DB53004EA7E3 /* PlayLevelWinScene.swift in Sources */,
 				D1836D002818E11500F3E066 /* SplashScreenBear.swift in Sources */,
@@ -553,6 +566,7 @@
 				D193C6422812365700D4C4A0 /* ViewController.swift in Sources */,
 				D14C1C6B281785C800BCA0A6 /* GameWinScene.swift in Sources */,
 				D193C6402812365700D4C4A0 /* GameScene.swift in Sources */,
+				D1C99677281F678E00C42039 /* MathMaster.swift in Sources */,
 				D14387DA28175D46005F5D64 /* SplashScreenBScene.swift in Sources */,
 				D14C1C632817848600BCA0A6 /* CreditsScreenScene.swift in Sources */,
 				D1836CFF2818E11500F3E066 /* SplashScreenBear.swift in Sources */,
