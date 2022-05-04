@@ -5,12 +5,21 @@
 //  Created by Gregory Frank Martin on 4/24/22.
 //
 
-import Foundation
 import GameplayKit
 import SpriteKit
 
+///
+/// The base class that serves as the foundation for all states that the GameMaster object's FSM can be in.
+///
 class GameMasterStates : GKState {
+    ///
+    /// A reference to the GameMaster instance that owns the FSM.
+    ///
     fileprivate var _gm: GameMaster
+    
+    ///
+    /// A reference to the SKView that will show the content. This is required for scene transitions.
+    ///
     fileprivate var _skv: SKView
     
     init (_ gm: GameMaster, _ skv: SKView) {
@@ -22,45 +31,22 @@ class GameMasterStates : GKState {
 
 
 class GameMaster {
-    private var _score: Int = 0
-    private var _level: Int = 1
-    private var _numBalloonsToFloat: Int = 0
+    private var _mathMaster: MathMaster = MathMaster()
     
     ///
     /// The primary state machine, responsible for managing the global state of the game.
     ///
     private var _pfsm: GKStateMachine = GKStateMachine(states: [])
     
-    public var score: Int {
-        get {
-            return self._score
-        }
-        set {
-            self._score = newValue
-        }
-    }
-    
-    public var level: Int {
-        get {
-            return self._level
-        }
-        set {
-            self._level = newValue
-        }
-    }
-    
-    public var numBalloonsToFloat: Int {
-        get {
-            return self._numBalloonsToFloat
-        }
-        set {
-            self._numBalloonsToFloat = newValue
-        }
-    }
-    
     public var pfsm: GKStateMachine {
         get {
             return self._pfsm
+        }
+    }
+    
+    public var mathMaster: MathMaster {
+        get {
+            return self._mathMaster
         }
     }
     
@@ -182,6 +168,10 @@ class GameMaster {
                     self._skv.presentScene(sceneNode, transition: reveal)
                 }
             }
+        }
+        
+        override func update(deltaTime seconds: TimeInterval) {
+            super.update(deltaTime: seconds)
         }
     }
     

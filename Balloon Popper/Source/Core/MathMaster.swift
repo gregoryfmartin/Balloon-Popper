@@ -168,6 +168,20 @@ class MathMaster {
     }
     
     ///
+    /// This will be called when the player has missed the total number of allowable balloons in the level.
+    ///
+    public func restartLevel (_ gm: GameMaster) {
+        // Reset the tapped balloons counter
+        self._numBalloonsTapped = 0
+        
+        // Prepare the current number of balloons for this level
+        // Use destructuring for this because the number index method looks silly
+        let (dscalar, cthreshold) = MathMaster.difficultyLookupTable[self._currentLevel]!
+        self._numBalloonsForLevel = Int.init((self._baseNumBalloons * dscalar) + self._baseNumBalloons)
+        self._numBalloonsToPop = Int.init(Float.init(self._numBalloonsForLevel) * cthreshold)
+    }
+    
+    ///
     /// Says if the player has popped enough balloons to win the current level or not.
     ///
     public func hasPlayerWon () -> Bool {
