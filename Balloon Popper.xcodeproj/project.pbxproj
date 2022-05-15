@@ -17,6 +17,30 @@
 		D14C1C69281785A300BCA0A6 /* PlayLevelLoseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14C1C68281785A300BCA0A6 /* PlayLevelLoseScene.swift */; };
 		D14C1C6B281785C800BCA0A6 /* GameWinScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14C1C6A281785C800BCA0A6 /* GameWinScene.swift */; };
 		D14C1C6D281785E900BCA0A6 /* GameLoseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14C1C6C281785E900BCA0A6 /* GameLoseScene.swift */; };
+		D15C0688282C5767001702F4 /* GameMasterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C0687282C5767001702F4 /* GameMasterState.swift */; };
+		D15C0689282C5767001702F4 /* GameMasterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C0687282C5767001702F4 /* GameMasterState.swift */; };
+		D15C068C282C581F001702F4 /* GMSSplashScreenA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C068B282C581F001702F4 /* GMSSplashScreenA.swift */; };
+		D15C068D282C581F001702F4 /* GMSSplashScreenA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C068B282C581F001702F4 /* GMSSplashScreenA.swift */; };
+		D15C068F282C5891001702F4 /* GMSSplashScreenB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C068E282C5891001702F4 /* GMSSplashScreenB.swift */; };
+		D15C0690282C5891001702F4 /* GMSSplashScreenB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C068E282C5891001702F4 /* GMSSplashScreenB.swift */; };
+		D15C0692282C58EF001702F4 /* GMSTitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C0691282C58EF001702F4 /* GMSTitleScreen.swift */; };
+		D15C0693282C58EF001702F4 /* GMSTitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C0691282C58EF001702F4 /* GMSTitleScreen.swift */; };
+		D15C0695282C592C001702F4 /* GMSOptionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C0694282C592C001702F4 /* GMSOptionsScreen.swift */; };
+		D15C0696282C592C001702F4 /* GMSOptionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C0694282C592C001702F4 /* GMSOptionsScreen.swift */; };
+		D15C0698282C5979001702F4 /* GMSCreditsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C0697282C5979001702F4 /* GMSCreditsScreen.swift */; };
+		D15C0699282C5979001702F4 /* GMSCreditsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C0697282C5979001702F4 /* GMSCreditsScreen.swift */; };
+		D15C069B282C599D001702F4 /* GMSPlayLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C069A282C599D001702F4 /* GMSPlayLevel.swift */; };
+		D15C069C282C599D001702F4 /* GMSPlayLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C069A282C599D001702F4 /* GMSPlayLevel.swift */; };
+		D15C069E282C59C3001702F4 /* GMSPlayLevelWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C069D282C59C3001702F4 /* GMSPlayLevelWin.swift */; };
+		D15C069F282C59C3001702F4 /* GMSPlayLevelWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C069D282C59C3001702F4 /* GMSPlayLevelWin.swift */; };
+		D15C06A1282C59E9001702F4 /* GMSPlayLevelLose.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C06A0282C59E9001702F4 /* GMSPlayLevelLose.swift */; };
+		D15C06A2282C59E9001702F4 /* GMSPlayLevelLose.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C06A0282C59E9001702F4 /* GMSPlayLevelLose.swift */; };
+		D15C06A5282C5A18001702F4 /* GMSGameWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C06A4282C5A18001702F4 /* GMSGameWin.swift */; };
+		D15C06A6282C5A18001702F4 /* GMSGameWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C06A4282C5A18001702F4 /* GMSGameWin.swift */; };
+		D15C06A8282C5A48001702F4 /* GMSGameLose.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C06A7282C5A48001702F4 /* GMSGameLose.swift */; };
+		D15C06A9282C5A48001702F4 /* GMSGameLose.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C06A7282C5A48001702F4 /* GMSGameLose.swift */; };
+		D15C06AF282C9175001702F4 /* GameMinorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C06AE282C9175001702F4 /* GameMinorState.swift */; };
+		D15C06B0282C9175001702F4 /* GameMinorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15C06AE282C9175001702F4 /* GameMinorState.swift */; };
 		D166CB972817873B00A2AA70 /* SplashScreenA.sks in Resources */ = {isa = PBXBuildFile; fileRef = D166CB962817873B00A2AA70 /* SplashScreenA.sks */; };
 		D166CB9B2817876400A2AA70 /* SplashScreenB.sks in Resources */ = {isa = PBXBuildFile; fileRef = D166CB9A2817876400A2AA70 /* SplashScreenB.sks */; };
 		D166CB9D2817877300A2AA70 /* TitleScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = D166CB9C2817877300A2AA70 /* TitleScreen.sks */; };
@@ -119,6 +143,18 @@
 		D14C1C68281785A300BCA0A6 /* PlayLevelLoseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayLevelLoseScene.swift; sourceTree = "<group>"; };
 		D14C1C6A281785C800BCA0A6 /* GameWinScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWinScene.swift; sourceTree = "<group>"; };
 		D14C1C6C281785E900BCA0A6 /* GameLoseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLoseScene.swift; sourceTree = "<group>"; };
+		D15C0687282C5767001702F4 /* GameMasterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMasterState.swift; sourceTree = "<group>"; };
+		D15C068B282C581F001702F4 /* GMSSplashScreenA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSSplashScreenA.swift; sourceTree = "<group>"; };
+		D15C068E282C5891001702F4 /* GMSSplashScreenB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSSplashScreenB.swift; sourceTree = "<group>"; };
+		D15C0691282C58EF001702F4 /* GMSTitleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSTitleScreen.swift; sourceTree = "<group>"; };
+		D15C0694282C592C001702F4 /* GMSOptionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSOptionsScreen.swift; sourceTree = "<group>"; };
+		D15C0697282C5979001702F4 /* GMSCreditsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSCreditsScreen.swift; sourceTree = "<group>"; };
+		D15C069A282C599D001702F4 /* GMSPlayLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSPlayLevel.swift; sourceTree = "<group>"; };
+		D15C069D282C59C3001702F4 /* GMSPlayLevelWin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSPlayLevelWin.swift; sourceTree = "<group>"; };
+		D15C06A0282C59E9001702F4 /* GMSPlayLevelLose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSPlayLevelLose.swift; sourceTree = "<group>"; };
+		D15C06A4282C5A18001702F4 /* GMSGameWin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSGameWin.swift; sourceTree = "<group>"; };
+		D15C06A7282C5A48001702F4 /* GMSGameLose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSGameLose.swift; sourceTree = "<group>"; };
+		D15C06AE282C9175001702F4 /* GameMinorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMinorState.swift; sourceTree = "<group>"; };
 		D166CB962817873B00A2AA70 /* SplashScreenA.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SplashScreenA.sks; sourceTree = "<group>"; };
 		D166CB9A2817876400A2AA70 /* SplashScreenB.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SplashScreenB.sks; sourceTree = "<group>"; };
 		D166CB9C2817877300A2AA70 /* TitleScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScreen.sks; sourceTree = "<group>"; };
@@ -214,6 +250,41 @@
 				D1836CFE2818E11500F3E066 /* SplashScreenBear.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		D15C0686282C56EF001702F4 /* State Management */ = {
+			isa = PBXGroup;
+			children = (
+				D15C06AD282C8909001702F4 /* Secondary Game States */,
+				D15C068A282C57F9001702F4 /* Primary Game States */,
+				D15C0687282C5767001702F4 /* GameMasterState.swift */,
+				D15C06AE282C9175001702F4 /* GameMinorState.swift */,
+			);
+			path = "State Management";
+			sourceTree = "<group>";
+		};
+		D15C068A282C57F9001702F4 /* Primary Game States */ = {
+			isa = PBXGroup;
+			children = (
+				D15C068B282C581F001702F4 /* GMSSplashScreenA.swift */,
+				D15C068E282C5891001702F4 /* GMSSplashScreenB.swift */,
+				D15C0691282C58EF001702F4 /* GMSTitleScreen.swift */,
+				D15C0694282C592C001702F4 /* GMSOptionsScreen.swift */,
+				D15C0697282C5979001702F4 /* GMSCreditsScreen.swift */,
+				D15C069A282C599D001702F4 /* GMSPlayLevel.swift */,
+				D15C069D282C59C3001702F4 /* GMSPlayLevelWin.swift */,
+				D15C06A0282C59E9001702F4 /* GMSPlayLevelLose.swift */,
+				D15C06A4282C5A18001702F4 /* GMSGameWin.swift */,
+				D15C06A7282C5A48001702F4 /* GMSGameLose.swift */,
+			);
+			path = "Primary Game States";
+			sourceTree = "<group>";
+		};
+		D15C06AD282C8909001702F4 /* Secondary Game States */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Secondary Game States";
 			sourceTree = "<group>";
 		};
 		D166CB982817874800A2AA70 /* Actions */ = {
@@ -369,6 +440,7 @@
 		D1C99675281F677800C42039 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D15C0686282C56EF001702F4 /* State Management */,
 				D1CB21E62815EE5F0006696D /* GameMaster.swift */,
 				D1C99676281F678E00C42039 /* MathMaster.swift */,
 			);
@@ -536,12 +608,21 @@
 			files = (
 				D1836CF62818DBFC00F3E066 /* GameMaster.swift in Sources */,
 				D17E98652818DB53004EA7E3 /* Balloon.swift in Sources */,
+				D15C0696282C592C001702F4 /* GMSOptionsScreen.swift in Sources */,
+				D15C06B0282C9175001702F4 /* GameMinorState.swift in Sources */,
+				D15C0690282C5891001702F4 /* GMSSplashScreenB.swift in Sources */,
 				D17E98662818DB53004EA7E3 /* SplashScreenAScene.swift in Sources */,
 				D17E98672818DB53004EA7E3 /* SplashScreenBScene.swift in Sources */,
+				D15C0699282C5979001702F4 /* GMSCreditsScreen.swift in Sources */,
+				D15C068D282C581F001702F4 /* GMSSplashScreenA.swift in Sources */,
 				D17E98682818DB53004EA7E3 /* TitleScreenScene.swift in Sources */,
 				D17E98692818DB53004EA7E3 /* OptionsScreenScene.swift in Sources */,
 				D17E986A2818DB53004EA7E3 /* CreditsScreenScene.swift in Sources */,
+				D15C06A9282C5A48001702F4 /* GMSGameLose.swift in Sources */,
+				D15C0689282C5767001702F4 /* GameMasterState.swift in Sources */,
 				D1C99678281F678E00C42039 /* MathMaster.swift in Sources */,
+				D15C069F282C59C3001702F4 /* GMSPlayLevelWin.swift in Sources */,
+				D15C06A6282C5A18001702F4 /* GMSGameWin.swift in Sources */,
 				D17E986B2818DB53004EA7E3 /* PlayLevelScene.swift in Sources */,
 				D17E986C2818DB53004EA7E3 /* PlayLevelWinScene.swift in Sources */,
 				D1836D002818E11500F3E066 /* SplashScreenBear.swift in Sources */,
@@ -549,9 +630,12 @@
 				D17E986E2818DB53004EA7E3 /* GameWinScene.swift in Sources */,
 				D17E986F2818DB53004EA7E3 /* GameLoseScene.swift in Sources */,
 				D17E98702818DB53004EA7E3 /* GMScene.swift in Sources */,
+				D15C0693282C58EF001702F4 /* GMSTitleScreen.swift in Sources */,
+				D15C069C282C599D001702F4 /* GMSPlayLevel.swift in Sources */,
 				D17E98052818D7F9004EA7E3 /* GameScene.swift in Sources */,
 				D17E98072818D7F9004EA7E3 /* GameViewController.swift in Sources */,
 				D17E97FF2818D7F9004EA7E3 /* AppDelegate.swift in Sources */,
+				D15C06A2282C59E9001702F4 /* GMSPlayLevelLose.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,12 +645,21 @@
 			files = (
 				D14C1C672817857200BCA0A6 /* PlayLevelWinScene.swift in Sources */,
 				D1CB21E72815EE5F0006696D /* GameMaster.swift in Sources */,
+				D15C0695282C592C001702F4 /* GMSOptionsScreen.swift in Sources */,
+				D15C06AF282C9175001702F4 /* GameMinorState.swift in Sources */,
+				D15C068F282C5891001702F4 /* GMSSplashScreenB.swift in Sources */,
 				D14C1C652817853700BCA0A6 /* PlayLevelScene.swift in Sources */,
 				D14387DC28175DE7005F5D64 /* TitleScreenScene.swift in Sources */,
+				D15C0698282C5979001702F4 /* GMSCreditsScreen.swift in Sources */,
+				D15C068C282C581F001702F4 /* GMSSplashScreenA.swift in Sources */,
 				D193C6422812365700D4C4A0 /* ViewController.swift in Sources */,
 				D14C1C6B281785C800BCA0A6 /* GameWinScene.swift in Sources */,
 				D193C6402812365700D4C4A0 /* GameScene.swift in Sources */,
+				D15C06A8282C5A48001702F4 /* GMSGameLose.swift in Sources */,
+				D15C0688282C5767001702F4 /* GameMasterState.swift in Sources */,
 				D1C99677281F678E00C42039 /* MathMaster.swift in Sources */,
+				D15C069E282C59C3001702F4 /* GMSPlayLevelWin.swift in Sources */,
+				D15C06A5282C5A18001702F4 /* GMSGameWin.swift in Sources */,
 				D14387DA28175D46005F5D64 /* SplashScreenBScene.swift in Sources */,
 				D14C1C632817848600BCA0A6 /* CreditsScreenScene.swift in Sources */,
 				D1836CFF2818E11500F3E066 /* SplashScreenBear.swift in Sources */,
@@ -574,9 +667,12 @@
 				D197CC3728179286007DE072 /* GMScene.swift in Sources */,
 				D14C1C6D281785E900BCA0A6 /* GameLoseScene.swift in Sources */,
 				D1CB21E1281319780006696D /* Balloon.swift in Sources */,
+				D15C0692282C58EF001702F4 /* GMSTitleScreen.swift in Sources */,
+				D15C069B282C599D001702F4 /* GMSPlayLevel.swift in Sources */,
 				D14387DE28175E45005F5D64 /* OptionsScreenScene.swift in Sources */,
 				D14387D828175BFF005F5D64 /* SplashScreenAScene.swift in Sources */,
 				D14C1C69281785A300BCA0A6 /* PlayLevelLoseScene.swift in Sources */,
+				D15C06A1282C59E9001702F4 /* GMSPlayLevelLose.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

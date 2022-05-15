@@ -20,7 +20,7 @@ class OptionsScreenScene : GMScene {
         let frontTouchedNode = atPoint(location).name
         
         if frontTouchedNode == "labelGoBack" {
-            self.gameMaster.pfsm.enter(GameMaster.GMSTitleScreen.self)
+            self.gameMaster.pfsm.enter(GMSTitleScreen.self)
         }
     }
 }

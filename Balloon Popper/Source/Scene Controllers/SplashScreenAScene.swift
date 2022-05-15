@@ -31,7 +31,7 @@ class SplashScreenAScene : GMScene {
             // out of actions.
             if !label.hasActions() {
                 self.run(SKAction.wait(forDuration: 6.0))
-                self.gameMaster.pfsm.enter(GameMaster.GMSSplashScreenB.self)
+                self.gameMaster.pfsm.enter(GMSSplashScreenB.self)
             }
         }
     }

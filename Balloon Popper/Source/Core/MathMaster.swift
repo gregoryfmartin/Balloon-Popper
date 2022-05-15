@@ -138,16 +138,16 @@ class MathMaster {
     /// The formula to determine the number of balloons per level to fly is as follows: (Base Number \* Scalar) + Base Number = Total Balloons
     ///
     static public let difficultyLookupTable: [Int : (Float, Float)] = [
-        1 : (1.0, 0.5),  // Total number of balloons here is 20
-        2 : (1.5, 0.6),  // Total number of balloons here is 25
-        3 : (2.0, 0.7),  // Total number of balloons here is 30
-        4 : (3.8, 0.75),  // Total number of balloons here is 48
-        5 : (4.7, 0.8),  // Total number of balloons here is 57
-        6 : (5.3, 0.8),  // Total number of balloons here is 63
-        7 : (6.6, 0.82),  // Total number of balloons here is 76
-        8 : (7.1, 0.85),  // Total number of balloons here is 81
-        9 : (10.0, 0.85), // Total number of balloons here is 110
-        10 : (30.0, 0.9) // Total number of balloons here is 310
+        1  : (1.0, 0.5),   // Total number of balloons here is 20
+        2  : (1.5, 0.6),   // Total number of balloons here is 25
+        3  : (2.0, 0.7),   // Total number of balloons here is 30
+        4  : (3.8, 0.75),  // Total number of balloons here is 48
+        5  : (4.7, 0.8),   // Total number of balloons here is 57
+        6  : (5.3, 0.8),   // Total number of balloons here is 63
+        7  : (6.6, 0.82),  // Total number of balloons here is 76
+        8  : (7.1, 0.85),  // Total number of balloons here is 81
+        9  : (10.0, 0.85), // Total number of balloons here is 110
+        10 : (30.0, 0.9)   // Total number of balloons here is 310
     ]
     
     ///

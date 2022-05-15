@@ -23,6 +23,8 @@ class TitleScreenScene : GMScene {
     ///
     private var _labelCredits: SKLabelNode? = nil
     
+    private var _labelPlay: SKLabelNode? = nil
+    
     ///
     /// A SKAudioNode that will be dynamically placed in the scene that will play the background audio. The decision to use a dynamic instance of this object instead of placing it in the scene using the Scene Editor was because it seemed too difficult to obtain a reference to it using usual methods. The usual method - illustrated when obtaining a reference to the labels above in the sceneDidLoad function - would fail to obtain the SKAudioNode reference depsite the fact that everything seemed to be correct otherwise.
     ///
@@ -35,9 +37,11 @@ class TitleScreenScene : GMScene {
         // Obtain a reference to the labelCredits node.
         self._labelCredits = self.childNode(withName: "\\labelCredits") as! SKLabelNode?
         
+        self._labelPlay = self.childNode(withName: "\\labelPlay") as! SKLabelNode?
+        
         // Set some properties for the background music node, then add it to the parent.
         self._audioBgm.autoplayLooped = true
-        self._audioBgm.run(SKAction.changeVolume(to: 0.1, duration: 0.0))
+//        self._audioBgm.run(SKAction.changeVolume(to: 0.1, duration: 0.0))
         self.addChild(self._audioBgm)
     }
     
@@ -58,7 +62,7 @@ class TitleScreenScene : GMScene {
                 SKAction.sequence([
                     SKAction.playSoundFileNamed("Voice Options", waitForCompletion: true),
                     SKAction.run {
-                        self.gameMaster.pfsm.enter(GameMaster.GMSOptionsScreen.self)
+                        self.gameMaster.pfsm.enter(GMSOptionsScreen.self)
                     }
                 ])
             ]))
@@ -71,7 +75,20 @@ class TitleScreenScene : GMScene {
                 SKAction.sequence([
                     SKAction.playSoundFileNamed("Voice Credits", waitForCompletion: true),
                     SKAction.run {
-                        self.gameMaster.pfsm.enter(GameMaster.GMSCreditsScreen.self)
+                        self.gameMaster.pfsm.enter(GMSCreditsScreen.self)
+                    }
+                ])
+            ]))
+        }
+        
+        // If the touched node is the labelPlay node (obtained by name through frontTouchedNode), run a blink-like animation, play the VFX for the Play selection, and once that VFX is done, trigger a state transition in the GameMaster to the Credits scene.
+        if frontTouchedNode == "labelPlay" {
+            self._labelPlay?.run(SKAction.group([
+                SKAction.repeatForever(SKAction.init(named: "TitleItemFlash")!),
+                SKAction.sequence([
+                    SKAction.playSoundFileNamed("Voice Continue", waitForCompletion: true),
+                    SKAction.run {
+                        self.gameMaster.pfsm.enter(GMSPlayLevel.self)
                     }
                 ])
             ]))

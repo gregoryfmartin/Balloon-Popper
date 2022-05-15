@@ -14,6 +14,6 @@ import SwiftUI
 ///
 class CreditsScreenScene : GMScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.gameMaster.pfsm.enter(GameMaster.GMSTitleScreen.self)
+        self.gameMaster.pfsm.enter(GMSTitleScreen.self)
     }
 }
