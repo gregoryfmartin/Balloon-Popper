@@ -30,7 +30,7 @@ class GMSPlayLevelWin : GameMasterStates {
     override func didEnter (from previousState: GKState?) {
         if let scene = GKScene(fileNamed: "PlayLevelWin") {
             if let sceneNode = scene.rootNode as! CreditsScreenScene? {
-                sceneNode.scaleMode = .aspectFill
+                sceneNode.scaleMode = .aspectFit
                 sceneNode.gameMaster = self._gm
                 let reveal = SKTransition.fade(withDuration: 0.5)
                 self._skv.presentScene(sceneNode, transition: reveal)

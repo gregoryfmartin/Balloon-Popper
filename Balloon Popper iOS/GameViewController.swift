@@ -18,6 +18,7 @@ class GameViewController: UIViewController {
             self.gameMaster = GameMaster(view)
             if let v = view.scene as? GMScene {
                 v.gameMaster = self.gameMaster!
+                v.scaleMode = .aspectFit
             }
         }
         

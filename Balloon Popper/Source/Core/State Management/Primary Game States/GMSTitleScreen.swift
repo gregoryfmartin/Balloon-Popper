@@ -31,7 +31,7 @@ class GMSTitleScreen : GameMasterStates {
     override func didEnter (from previousState: GKState?) {
         if let scene = GKScene(fileNamed: "TitleScreen") {
             if let sceneNode = scene.rootNode as! TitleScreenScene? {
-                sceneNode.scaleMode = .aspectFill
+                sceneNode.scaleMode = .aspectFit
                 sceneNode.gameMaster = self._gm
                 let reveal = SKTransition.fade(withDuration: 0.5)
                 self._skv.presentScene(sceneNode, transition: reveal)
