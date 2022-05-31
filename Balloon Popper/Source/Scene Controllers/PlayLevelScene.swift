@@ -92,7 +92,7 @@ class PlayLevelScene : GMScene {
         private static let BOTTOM_UI_CONTAINER_HEIGHT_SCALAR: CGFloat = 0.075
         
         // Nodes for the UI
-        private var _topUiContainer: SKShapeNode = SKShapeNode()
+        private var _topUiContainer: SKTopUiContainer? = nil
         private var _bottomUiContainer: SKShapeNode = SKShapeNode()
         private var _levelLabel: SKLabelNode = SKLabelNode(text: "Level")
         private var _levelValue: SKLabelNode = SKLabelNode()
@@ -123,7 +123,7 @@ class PlayLevelScene : GMScene {
             
             // Provision the nodes
             // Most of this is going to be dynamic positioning.
-            print("\(self._scene.frame.width)x\(self._scene.frame.height)")
+            print("\(self._scene.frame.width) x  \(self._scene.frame.height)")
             
             // The following line will create a SKShapeNode by using a CGRect, but this doesn't
             // actually change the position property of the node.
@@ -134,11 +134,12 @@ class PlayLevelScene : GMScene {
             // previous statment (128). The CGRect is created with x, y at scene origin
             // and then the position is manually manipulated with the values that were originally
             // used as the CGRect's x and y values respectively.
-            self._topUiContainer = SKShapeNode(rect: CGRect(x: 0.0, y: 0.0, width: sceneFrameWidth, height: topUiContainerHeight))
-            self._topUiContainer.position.x = -(sceneFrameWidth / 2.0)
-            self._topUiContainer.position.y = (sceneFrameHeight / 2.0) - topUiContainerHeight
-            self._topUiContainer.lineWidth = 2.0
-            self._topUiContainer.strokeColor = .white
+//            self._topUiContainer = SKShapeNode(rect: CGRect(x: 0.0, y: 0.0, width: sceneFrameWidth, height: topUiContainerHeight))
+//            self._topUiContainer.position.x = -(sceneFrameWidth / 2.0)
+//            self._topUiContainer.position.y = (sceneFrameHeight / 2.0) - topUiContainerHeight
+//            self._topUiContainer.lineWidth = 2.0
+//            self._topUiContainer.strokeColor = .white
+            self._topUiContainer = SKTopUiContainer(sceneFrameWidth: sceneFrameWidth, sceneFrameHeight: sceneFrameHeight)
             
             self._bottomUiContainer = SKShapeNode(rect: CGRect(x: -(sceneFrameWidth / 2.0), y: -((sceneFrameHeight / 2.0)), width: sceneFrameWidth, height: bottomUiContainerHeight))
             self._bottomUiContainer.lineWidth = 2.0
@@ -147,17 +148,26 @@ class PlayLevelScene : GMScene {
             // With the position of the Top UI container being corrected, this should place the
             // levelLabel node in the "correct" location. Without modifying the position of the
             // levelLabel node, it appears in the bottom-left corner of the topUiContainer node.
-            self._topUiContainer.addChild(self._levelLabel)
-            self._topUiContainer.addChild(self._levelValue)
-            self._levelLabel.position = CGPoint(x: (self._levelLabel.frame.width / 2.0) + 25.0, y: ((self._levelLabel.parent?.frame.height)! - self._levelLabel.frame.height) - 10.0)
-            self._levelValue.fontSize = 64.0
-            self._levelValue.position = CGPoint(x: (self._levelLabel.frame.origin.x + (self._levelLabel.frame.width / 2.0)), y: (self._levelLabel.frame.origin.y - self._levelLabel.frame.height) - (self._levelValue.frame.height / 2.0) - 5.0)
-            print("Level Value Font Size is \(self._levelValue.fontSize)")
-            
+//            self._topUiContainer.addChild(self._levelLabel)
+//            self._topUiContainer.addChild(self._levelValue)
+//            self._topUiContainer.addChild(self._balloonsToTapLabel)
+//            self._levelLabel.position = CGPoint(x: (self._levelLabel.frame.width / 2.0) + 25.0, y: ((self._levelLabel.parent?.frame.height)! - self._levelLabel.frame.height) - 10.0)
+//            self._levelValue.fontSize = 64.0
+//            self._levelValue.position = CGPoint(x: (self._levelLabel.frame.origin.x + (self._levelLabel.frame.width / 2.0)), y: (self._levelLabel.frame.origin.y - self._levelLabel.frame.height) - (self._levelValue.frame.height / 2.0) - 5.0)
+//            self._balloonsToTapLabel.position = CGPoint(x: ((self._balloonsToTapLabel.parent?.frame.width)! / 2.0) - (self._balloonsToTapLabel.frame.width / 2.0), y: 0.0)
+//            print("Top UI Container Frame Origin: \(self._topUiContainer.frame.origin.x) x \(self._topUiContainer.frame.origin.y)")
+//            print("Balloons To Tap Label Position: \(self._balloonsToTapLabel.position.x) x \(self._balloonsToTapLabel.position.y)")
             
             // Add the nodes to the scene
-            self._scene.addChild(self._topUiContainer)
+            self._scene.addChild(self._topUiContainer!)
             self._scene.addChild(self._bottomUiContainer)
+        }
+        
+        override func update(deltaTime seconds: TimeInterval) {
+            super.update(deltaTime: seconds)
+            
+            let mathMasterRef = self._scene.gameMaster.mathMaster
+            self._topUiContainer?.updateUiValues(mathMasterRef: mathMasterRef)
         }
     }
     

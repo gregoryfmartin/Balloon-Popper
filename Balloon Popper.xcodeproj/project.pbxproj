@@ -130,6 +130,8 @@
 		D1C99678281F678E00C42039 /* MathMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C99676281F678E00C42039 /* MathMaster.swift */; };
 		D1CB21E1281319780006696D /* Balloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB21E0281319780006696D /* Balloon.swift */; };
 		D1CB21E72815EE5F0006696D /* GameMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB21E62815EE5F0006696D /* GameMaster.swift */; };
+		D1F889E028441728009E2649 /* SKTopUiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F889DF28441728009E2649 /* SKTopUiContainer.swift */; };
+		D1F889E128441728009E2649 /* SKTopUiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F889DF28441728009E2649 /* SKTopUiContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -205,6 +207,7 @@
 		D1C99676281F678E00C42039 /* MathMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathMaster.swift; sourceTree = "<group>"; };
 		D1CB21E0281319780006696D /* Balloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balloon.swift; sourceTree = "<group>"; };
 		D1CB21E62815EE5F0006696D /* GameMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMaster.swift; sourceTree = "<group>"; };
+		D1F889DF28441728009E2649 /* SKTopUiContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTopUiContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,11 +443,20 @@
 		D1C99675281F677800C42039 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D1F889DE28441718009E2649 /* Nodes */,
 				D15C0686282C56EF001702F4 /* State Management */,
 				D1CB21E62815EE5F0006696D /* GameMaster.swift */,
 				D1C99676281F678E00C42039 /* MathMaster.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		D1F889DE28441718009E2649 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				D1F889DF28441728009E2649 /* SKTopUiContainer.swift */,
+			);
+			path = Nodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -630,6 +642,7 @@
 				D17E986E2818DB53004EA7E3 /* GameWinScene.swift in Sources */,
 				D17E986F2818DB53004EA7E3 /* GameLoseScene.swift in Sources */,
 				D17E98702818DB53004EA7E3 /* GMScene.swift in Sources */,
+				D1F889E128441728009E2649 /* SKTopUiContainer.swift in Sources */,
 				D15C0693282C58EF001702F4 /* GMSTitleScreen.swift in Sources */,
 				D15C069C282C599D001702F4 /* GMSPlayLevel.swift in Sources */,
 				D17E98052818D7F9004EA7E3 /* GameScene.swift in Sources */,
@@ -667,6 +680,7 @@
 				D197CC3728179286007DE072 /* GMScene.swift in Sources */,
 				D14C1C6D281785E900BCA0A6 /* GameLoseScene.swift in Sources */,
 				D1CB21E1281319780006696D /* Balloon.swift in Sources */,
+				D1F889E028441728009E2649 /* SKTopUiContainer.swift in Sources */,
 				D15C0692282C58EF001702F4 /* GMSTitleScreen.swift in Sources */,
 				D15C069B282C599D001702F4 /* GMSPlayLevel.swift in Sources */,
 				D14387DE28175E45005F5D64 /* OptionsScreenScene.swift in Sources */,
