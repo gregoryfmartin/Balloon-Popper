@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D13159F828492A030083E898 /* SKBottomUiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13159F728492A030083E898 /* SKBottomUiContainer.swift */; };
+		D13159F928492A030083E898 /* SKBottomUiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13159F728492A030083E898 /* SKBottomUiContainer.swift */; };
 		D14387D828175BFF005F5D64 /* SplashScreenAScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14387D728175BFF005F5D64 /* SplashScreenAScene.swift */; };
 		D14387DA28175D46005F5D64 /* SplashScreenBScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14387D928175D46005F5D64 /* SplashScreenBScene.swift */; };
 		D14387DC28175DE7005F5D64 /* TitleScreenScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14387DB28175DE7005F5D64 /* TitleScreenScene.swift */; };
@@ -135,6 +137,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D13159F728492A030083E898 /* SKBottomUiContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKBottomUiContainer.swift; sourceTree = "<group>"; };
 		D14387D728175BFF005F5D64 /* SplashScreenAScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenAScene.swift; sourceTree = "<group>"; };
 		D14387D928175D46005F5D64 /* SplashScreenBScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenBScene.swift; sourceTree = "<group>"; };
 		D14387DB28175DE7005F5D64 /* TitleScreenScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenScene.swift; sourceTree = "<group>"; };
@@ -455,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				D1F889DF28441728009E2649 /* SKTopUiContainer.swift */,
+				D13159F728492A030083E898 /* SKBottomUiContainer.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -626,6 +630,7 @@
 				D17E98662818DB53004EA7E3 /* SplashScreenAScene.swift in Sources */,
 				D17E98672818DB53004EA7E3 /* SplashScreenBScene.swift in Sources */,
 				D15C0699282C5979001702F4 /* GMSCreditsScreen.swift in Sources */,
+				D13159F928492A030083E898 /* SKBottomUiContainer.swift in Sources */,
 				D15C068D282C581F001702F4 /* GMSSplashScreenA.swift in Sources */,
 				D17E98682818DB53004EA7E3 /* TitleScreenScene.swift in Sources */,
 				D17E98692818DB53004EA7E3 /* OptionsScreenScene.swift in Sources */,
@@ -664,6 +669,7 @@
 				D14C1C652817853700BCA0A6 /* PlayLevelScene.swift in Sources */,
 				D14387DC28175DE7005F5D64 /* TitleScreenScene.swift in Sources */,
 				D15C0698282C5979001702F4 /* GMSCreditsScreen.swift in Sources */,
+				D13159F828492A030083E898 /* SKBottomUiContainer.swift in Sources */,
 				D15C068C282C581F001702F4 /* GMSSplashScreenA.swift in Sources */,
 				D193C6422812365700D4C4A0 /* ViewController.swift in Sources */,
 				D14C1C6B281785C800BCA0A6 /* GameWinScene.swift in Sources */,
