@@ -7,20 +7,63 @@
 
 import SpriteKit
 
+///
+/// This is the bottom UI container that's displayed in the Play Scene. It contains the current score and the button to bring up the in-game menu. It tries to be sensitive to the width of the scene on different screen sizes despite the aspect ratio being governed by the scene.
+///
 class SKBottomUiContainer: SKShapeNode {
+    ///
+    /// This scalar is multiplied by the height of the scene's frame to determine the height of this container.
+    ///
     private static let CONTAINER_HEIGHT_SCALAR: CGFloat = 0.075
+    
+    ///
+    /// The literal that's displayed above the Current Score Value label.
+    ///
     private static let SCORE_LABEL_DEFAULT_TEXT: String = "Score"
+    
+    ///
+    /// The default text to place in the Current Score Value label. This is really only intended to be used for debugging purposes.
+    ///
     private static let SCORE_VALUE_DEFAULT_TEXT: String = "999999"
+    
+    ///
+    /// The literal that's displayed above the Menu Value label.
+    ///
     private static let MENU_LABEL_DEFAULT_TEXT: String = "Menu"
+    
+    ///
+    /// The default text to place in the Menu Value label. This is really only intended to be used for debugging purposes.
+    ///
     private static let MENU_VALUE_DEFAULT_TEXT: String = "⏸"
     
+    ///
+    /// The line width of the shape. This is really only intended to be used for debugging purposes.
+    ///
     private static let RECT_FRAME_DEBUG_LINE_WIDTH: CGFloat = 1.0
+    
+    ///
+    /// The font size that's used for the value labels.
+    ///
     private static let VALUE_LABEL_FONT_SIZE: CGFloat = 64.0
+    
+    ///
+    /// The padding that gets applied to the top and bottom of the container that pulls the elements closer together in the center.
+    ///
     private static let HORIZONTAL_PADDING: CGFloat = 5.0
     
+    ///
+    /// The slab that gets placed in the far-left of the container. This contains the current score information.
+    ///
     private var _slabA: SKShapeNode = SKShapeNode()
+    
+    ///
+    /// The slab that gets placed in the far-right of the container. This contains the in-game menu button.
+    ///
     private var _slabB: SKShapeNode = SKShapeNode()
     
+    ///
+    ///
+    ///
     private var _scoreLabel: SKLabelNode = SKLabelNode(text: SKBottomUiContainer.SCORE_LABEL_DEFAULT_TEXT)
     private var _scoreValue: SKLabelNode = SKLabelNode(text: SKBottomUiContainer.SCORE_VALUE_DEFAULT_TEXT)
     private var _menuLabel: SKLabelNode = SKLabelNode(text: SKBottomUiContainer.MENU_LABEL_DEFAULT_TEXT)

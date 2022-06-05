@@ -17,7 +17,7 @@ class SKTopUiContainer: SKShapeNode {
     private static let CONTAINER_HEIGHT_SCALAR: CGFloat = 0.075
 
     ///
-    /// The literal that is displayed above the Current Level Value label.
+    /// The literal that's displayed above the Current Level Value label.
     ///
     private static let LEVEL_LABEL_DEFAULT_TEXT: String = "Level"
 

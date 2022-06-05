@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D13159F828492A030083E898 /* SKBottomUiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13159F728492A030083E898 /* SKBottomUiContainer.swift */; };
 		D13159F928492A030083E898 /* SKBottomUiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13159F728492A030083E898 /* SKBottomUiContainer.swift */; };
+		D13FF70E284CDEDE006F0B5F /* Play Arena Music A.wav in Resources */ = {isa = PBXBuildFile; fileRef = D13FF70D284CDEDE006F0B5F /* Play Arena Music A.wav */; };
+		D13FF70F284CDEDE006F0B5F /* Play Arena Music A.wav in Resources */ = {isa = PBXBuildFile; fileRef = D13FF70D284CDEDE006F0B5F /* Play Arena Music A.wav */; };
 		D14387D828175BFF005F5D64 /* SplashScreenAScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14387D728175BFF005F5D64 /* SplashScreenAScene.swift */; };
 		D14387DA28175D46005F5D64 /* SplashScreenBScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14387D928175D46005F5D64 /* SplashScreenBScene.swift */; };
 		D14387DC28175DE7005F5D64 /* TitleScreenScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14387DB28175DE7005F5D64 /* TitleScreenScene.swift */; };
@@ -138,6 +140,7 @@
 
 /* Begin PBXFileReference section */
 		D13159F728492A030083E898 /* SKBottomUiContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKBottomUiContainer.swift; sourceTree = "<group>"; };
+		D13FF70D284CDEDE006F0B5F /* Play Arena Music A.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Play Arena Music A.wav"; sourceTree = "<group>"; };
 		D14387D728175BFF005F5D64 /* SplashScreenAScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenAScene.swift; sourceTree = "<group>"; };
 		D14387D928175D46005F5D64 /* SplashScreenBScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenBScene.swift; sourceTree = "<group>"; };
 		D14387DB28175DE7005F5D64 /* TitleScreenScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenScene.swift; sourceTree = "<group>"; };
@@ -354,6 +357,7 @@
 		D182CEDF281CD833000B7F74 /* BGM */ = {
 			isa = PBXGroup;
 			children = (
+				D13FF70D284CDEDE006F0B5F /* Play Arena Music A.wav */,
 				D1B2AE6D281A2873001DAEE7 /* Credits Screen Music A.wav */,
 				D1B2AE6A281A258E001DAEE7 /* Options Screen Music A.wav */,
 				D1B2AE67281A2395001DAEE7 /* Title Screen Music B.wav */,
@@ -543,6 +547,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1C99674281EEE1A00C42039 /* Title Screen Music B.wav in Resources */,
+				D13FF70F284CDEDE006F0B5F /* Play Arena Music A.wav in Resources */,
 				D17E98722818DB78004EA7E3 /* SplashScreenA.sks in Resources */,
 				D17E98732818DB78004EA7E3 /* GameScene.sks in Resources */,
 				D182CEF2281CD8A0000B7F74 /* Voice New High Score.wav in Resources */,
@@ -612,6 +617,7 @@
 				D166CBA12817879100A2AA70 /* CreditsScreen.sks in Resources */,
 				D182CEEB281CD88F000B7F74 /* Voice Game Over.wav in Resources */,
 				D1B2AE6E281A2873001DAEE7 /* Credits Screen Music A.wav in Resources */,
+				D13FF70E284CDEDE006F0B5F /* Play Arena Music A.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -50,7 +50,7 @@ class Balloon : SKSpriteNode {
     ///
     /// A reference to the SKScene that the Balloon operates in.
     ///
-    fileprivate var _sceneRef: GameScene? = nil
+    fileprivate var _sceneRef: GMScene? = nil
     
     ///
     /// The animation lookup table.
@@ -182,7 +182,7 @@ class Balloon : SKSpriteNode {
     ///
     /// This is the intended initializer.
     ///
-    init (scene aScene: GameScene) {
+    init (scene aScene: GMScene) {
         super.init(texture: nil, color: .white, size: .zero)
         
         self._sceneRef = aScene
@@ -208,7 +208,7 @@ class Balloon : SKSpriteNode {
         let popAtlas = SKTextureAtlas(named: "Balloon Popped")
         
         // Load the floating animation frames
-        for i in 1 ... floatingAtlas.textureNames.count {
+        for i in 1...floatingAtlas.textureNames.count {
             var tname = ""
             if i < 10 {
                 tname = "Balloon Floating 00\(i)"
@@ -219,7 +219,7 @@ class Balloon : SKSpriteNode {
         }
         
         // Load the pop animation frames
-        for i in 1 ... popAtlas.textureNames.count {
+        for i in 1...popAtlas.textureNames.count {
             var tname = ""
             if i < 10 {
                 tname = "Balloon Popped 00\(i)"

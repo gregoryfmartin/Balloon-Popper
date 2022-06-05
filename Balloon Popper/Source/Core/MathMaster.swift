@@ -49,6 +49,11 @@ class MathMaster {
     private var _numBalloonsToPop: Int = 0
     
     ///
+    /// Used to determine if a balloon can be launched from the bottom of the screen.
+    ///
+    private var _balloonLaunchThreshold: Int = 5
+    
+    ///
     /// Public accessor for the private member of the same name.
     ///
     public var lives: Int {
@@ -186,5 +191,17 @@ class MathMaster {
     ///
     public func hasPlayerWon () -> Bool {
         return self._numBalloonsTapped >= self._numBalloonsToPop
+    }
+    
+    ///
+    /// Attempts to launch a ballon
+    ///
+    public func tryBalloonLaunch () -> Bool {
+        let chance = Int.random(in: 0 ..< 500)
+        if chance < self._balloonLaunchThreshold {
+            return true
+        } else {
+            return false
+        }
     }
 }

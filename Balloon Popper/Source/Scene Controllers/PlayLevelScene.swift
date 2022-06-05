@@ -102,6 +102,9 @@ class PlayLevelScene : GMScene {
         private var _balloonsTappedValue: SKLabelNode = SKLabelNode()
         private var _scoreLabel: SKLabelNode = SKLabelNode(text: "Score")
         private var _scoreValue: SKLabelNode = SKLabelNode()
+        private var _bgm: SKAudioNode = SKAudioNode(fileNamed: "Play Arena Music A")
+        
+        private var _sampleBalloon: Balloon? = nil
         
         override func isValidNextState(_ stateClass: AnyClass) -> Bool {
             return stateClass == PLSEnding.self
@@ -116,6 +119,10 @@ class PlayLevelScene : GMScene {
             let mathMasterRef = self._scene.gameMaster.mathMaster
             mathMasterRef.prepareLevel()
             
+            // TEST: Instantiate the test balloon
+//            self._sampleBalloon = Balloon(scene: self._scene)
+//            self._sampleBalloon?.position = CGPoint.zero
+            
             // Add the MathMaster data to the correct nodes
             self._levelValue.text = String(mathMasterRef.currentLevel)
             
@@ -126,9 +133,13 @@ class PlayLevelScene : GMScene {
             self._topUiContainer = SKTopUiContainer(sceneFrameWidth: sceneFrameWidth, sceneFrameHeight: sceneFrameHeight)
             self._bottomUiContainer = SKBottomUiContainer(sceneFrameWidth: sceneFrameWidth, sceneFrameHight: sceneFrameHeight)
             
+            self._bgm.autoplayLooped = true
+            self._scene.addChild(self._bgm)
+            
             // Add the nodes to the scene
             self._scene.addChild(self._topUiContainer!)
             self._scene.addChild(self._bottomUiContainer!)
+//            self._scene.addChild(self._sampleBalloon!)
         }
         
         override func update(deltaTime seconds: TimeInterval) {
