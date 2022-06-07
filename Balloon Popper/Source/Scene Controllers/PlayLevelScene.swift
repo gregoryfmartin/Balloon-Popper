@@ -104,7 +104,7 @@ class PlayLevelScene : GMScene {
         private var _scoreValue: SKLabelNode = SKLabelNode()
         private var _bgm: SKAudioNode = SKAudioNode(fileNamed: "Play Arena Music A")
         
-        private var _sampleBalloon: Balloon? = nil
+//        private var _sampleBalloon: Balloon? = nil
         
         override func isValidNextState(_ stateClass: AnyClass) -> Bool {
             return stateClass == PLSEnding.self
