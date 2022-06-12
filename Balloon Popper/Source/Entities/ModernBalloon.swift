@@ -108,8 +108,8 @@ class GMSpriteNode: SKSpriteNode, GMSpriteCommons {
 
 class ModernBalloon: GMSpriteNode {
     class BalloonTop: GMSpriteNode {
-        fileprivate var _actionsTable: [GMBalloonTopState : SKAction] = [:]
-        fileprivate var _animationsTable: [GMBalloonTopState : SKAction] = [:]
+//        fileprivate var _actionsTable: [GMBalloonTopState : SKAction] = [:]
+//        fileprivate var _animationsTable: [GMBalloonTopState : SKAction] = [:]
         
         class BTSAlive: GMBalloonTopState {
             override func isValidNextState(_ stateClass: AnyClass) -> Bool {
@@ -153,13 +153,43 @@ class ModernBalloon: GMSpriteNode {
     }
 
     class BalloonBottom: GMSpriteNode {
+        // This is required because "Type" can't be Hashable. This is bullshit.
+        enum BalloonBottomPossibleStates {
+            case alive
+            case falling
+            case dead
+        }
+        
+        fileprivate var _actionsTable: [BalloonBottomPossibleStates : SKAction] = [:]
+        fileprivate var _animationsTable: [BalloonBottomPossibleStates : SKAction] = [:]
+        
+        class BBSAlive: GMBalloonBottomState {
+            override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+                return stateClass == BBSFalling.self
+            }
+        }
+        
+        class BBSFalling: GMBalloonBottomState {
+            override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+                return stateClass == BBSDead.self
+            }
+        }
+        
+        class BBSDead: GMBalloonBottomState {
+            override func didEnter(from previousState: GKState?) {
+                // Remove this node from the parent's scene graph
+            }
+        }
+        
         required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
         }
         
         override init(mathMaster mmr: MathMaster) {
             super.init(mathMaster: mmr)
-            
+        }
+        
+        override func buildFrames() throws {
             let possiblesDirection: Bool = Bool.random() // true = left, false = right
             var possiblesAtlas: SKTextureAtlas? = nil
             if possiblesDirection {
@@ -170,6 +200,20 @@ class ModernBalloon: GMSpriteNode {
             let possiblesTotal: Int = possiblesAtlas!.textureNames.count - 1
             let possiblesSelection: Int = Int.random(in: 0 ... possiblesTotal)
             self.texture = possiblesAtlas!.textureNamed(possiblesAtlas!.textureNames[possiblesSelection])
+        }
+        
+        override func configureFsms() throws {
+            self._fsm = GKStateMachine(states: [
+                BBSAlive(self),
+                BBSFalling(self),
+                BBSDead(self)
+            ])
+            self._fsm.enter(BBSAlive.self)
+        }
+        
+        override func buildActions() throws {
+            // This needs run with a ease in only
+            self._actionsTable[.falling] = SKAction.moveTo(y: -1000.0, duration: 1.0)
         }
     }
 
