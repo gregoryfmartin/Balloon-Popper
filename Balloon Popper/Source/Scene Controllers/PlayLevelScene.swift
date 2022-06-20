@@ -104,7 +104,7 @@ class PlayLevelScene : GMScene {
         private var _scoreValue: SKLabelNode = SKLabelNode()
         private var _bgm: SKAudioNode = SKAudioNode(fileNamed: "Play Arena Music A")
         
-//        private var _sampleBalloon: Balloon? = nil
+        private var _sampleBalloon: ModernBalloon? = nil
         
         override func isValidNextState(_ stateClass: AnyClass) -> Bool {
             return stateClass == PLSEnding.self
@@ -123,6 +123,11 @@ class PlayLevelScene : GMScene {
 //            self._sampleBalloon = Balloon(scene: self._scene)
 //            self._sampleBalloon?.position = CGPoint.zero
             
+            self._sampleBalloon = ModernBalloon(mathMaster: mathMasterRef)
+            self._sampleBalloon?.position = CGPoint(x: 100.0, y: 100.0)
+            
+            print("Dimensions of the Sample Balloon Sprite: \(String(describing: self._sampleBalloon?.size.width)) x \(String(describing: self._sampleBalloon?.size.height))")
+            
             // Add the MathMaster data to the correct nodes
             self._levelValue.text = String(mathMasterRef.currentLevel)
             
@@ -139,7 +144,7 @@ class PlayLevelScene : GMScene {
             // Add the nodes to the scene
             self._scene.addChild(self._topUiContainer!)
             self._scene.addChild(self._bottomUiContainer!)
-//            self._scene.addChild(self._sampleBalloon!)
+            self._scene.addChild(self._sampleBalloon!)
         }
         
         override func update(deltaTime seconds: TimeInterval) {
