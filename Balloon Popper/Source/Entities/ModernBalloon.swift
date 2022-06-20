@@ -294,6 +294,7 @@ class ModernBalloon: GMSpriteNode {
         self.size.width = 128.0
         self.size.height = 256.0
         self.color = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+        self.zPosition = 0.5
         
         // Reposition the components
         self._balloonTop?.position = CGPoint(x: 0.0, y: 0.0)
