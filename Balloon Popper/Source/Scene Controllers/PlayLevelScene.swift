@@ -174,4 +174,15 @@ class PlayLevelScene : GMScene {
     override func update(_ currentTime: TimeInterval) {
         self._ssm.update(deltaTime: currentTime)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        let location = touch.location(in: self)
+        let frontTouchedNode = atPoint(location)
+        
+        if ((frontTouchedNode.name?.contains("Balloon Top")) != nil) {
+            let mbs: ModernBalloon = frontTouchedNode.parent as! ModernBalloon
+            mbs.fsm.enter(ModernBalloon.MBSPopped.self)
+        }
+    }
 }

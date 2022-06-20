@@ -87,6 +87,7 @@ class SKBottomUiContainer: SKShapeNode {
         self.path = mutRect
         self.position = CGPoint(x: -(self._sceneFrameWidth / 2.0), y: -(self._sceneFrameHeight / 2.0))
         self.lineWidth = SKBottomUiContainer.RECT_FRAME_DEBUG_LINE_WIDTH
+        self.name = "Bottom UI Container"
         
         let slabDivider: CGFloat = self.frame.width / 2.0
         
@@ -107,6 +108,7 @@ class SKBottomUiContainer: SKShapeNode {
         self._slabA.path = sarect
         self._slabA.lineWidth = SKBottomUiContainer.RECT_FRAME_DEBUG_LINE_WIDTH
         self._slabA.strokeColor = .red
+        self._slabA.name = "Bottom UI Container Slab A"
         self.addChild(self._slabA)
         self._slabA.position = CGPoint.zero
     }
@@ -117,6 +119,7 @@ class SKBottomUiContainer: SKShapeNode {
         self._slabB.path = sbrect
         self._slabB.lineWidth = SKBottomUiContainer.RECT_FRAME_DEBUG_LINE_WIDTH
         self._slabB.strokeColor = .green
+        self._slabB.name = "Bottom UI Container Slab B"
         self.addChild(self._slabB)
         self._slabB.position = CGPoint(x: sd, y: 0.0)
     }
@@ -129,6 +132,8 @@ class SKBottomUiContainer: SKShapeNode {
         let slaXHalved: CGFloat = self._slabA.frame.width / 2.0
         self._scoreLabel.position = CGPoint(x: slaXHalved, y: (mh - self._scoreLabel.frame.height) - SKBottomUiContainer.HORIZONTAL_PADDING)
         self._scoreValue.position = CGPoint(x: slaXHalved, y: SKBottomUiContainer.HORIZONTAL_PADDING)
+        self._scoreLabel.name = "Bottom UI Container Score Label"
+        self._scoreValue.name = "Bottom UI Container Score Value"
     }
     
     private func populateSlabB(myHeight mh: CGFloat) {
@@ -139,5 +144,7 @@ class SKBottomUiContainer: SKShapeNode {
         let slbXHalved: CGFloat = self._slabB.frame.width / 2.0
         self._menuLabel.position = CGPoint(x: slbXHalved, y: (mh - self._menuLabel.frame.height) - SKBottomUiContainer.HORIZONTAL_PADDING)
         self._menuValue.position = CGPoint(x: slbXHalved, y: SKBottomUiContainer.HORIZONTAL_PADDING)
+        self._menuLabel.name = "Bottom UI Container Menu Label"
+        self._menuValue.name = "Bottom UI Container Menu Value"
     }
 }

@@ -94,6 +94,24 @@ class GMSpriteNode: SKSpriteNode, GMSpriteCommons {
     fileprivate var _movementSpeed: CGFloat = 0.0
     fileprivate var _fsm: GKStateMachine = GKStateMachine(states: [])
     fileprivate var _mathMasterRef: MathMaster?
+    
+    public var direction: Int {
+        get {
+            return self._direction
+        }
+    }
+    
+    public var movementSpeed: CGFloat {
+        get {
+            return self._movementSpeed
+        }
+    }
+    
+    public var fsm: GKStateMachine {
+        get {
+            return self._fsm
+        }
+    }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -125,7 +143,21 @@ class ModernBalloon: GMSpriteNode {
             }
         }
         
-        class BTSDead: GMBalloonTopState {}
+        class BTSDead: GMBalloonTopState {
+            override func didEnter(from previousState: GKState?) {
+                let action: SKAction = SKAction.group([
+                    SKAction.playSoundFileNamed("Balloon Pop C", waitForCompletion: false),
+                    SKAction.sequence([
+                        SKAction.fadeOut(withDuration: 0.1),
+                        SKAction.run {
+                            self._balloonTopSprite.removeFromParent()
+                        }
+                    ])
+                ])
+                
+                self._balloonTopSprite.run(action)
+            }
+        }
         
         required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
@@ -133,6 +165,8 @@ class ModernBalloon: GMSpriteNode {
 
         override init(mathMaster mmr: MathMaster) {
             super.init(mathMaster: mmr)
+            
+            self.name = "Balloon Top"
             
             do {
                 try self.buildFrames()
@@ -189,6 +223,16 @@ class ModernBalloon: GMSpriteNode {
             override func isValidNextState(_ stateClass: AnyClass) -> Bool {
                 return stateClass == BBSDead.self
             }
+            
+            override func didEnter(from previousState: GKState?) {
+                let fallingAction: SKAction = SKAction.moveTo(y: -2000.0, duration: 1.5)
+                fallingAction.timingMode = .easeIn
+                let action: SKAction = SKAction.group([
+                    SKAction.playSoundFileNamed("Balloon Basket Falling", waitForCompletion: false),
+                    fallingAction
+                ])
+                self._balloonBottomSprite.run(action)
+            }
         }
         
         class BBSDead: GMBalloonBottomState {
@@ -203,6 +247,8 @@ class ModernBalloon: GMSpriteNode {
         
         override init(mathMaster mmr: MathMaster) {
             super.init(mathMaster: mmr)
+            
+            self.name = "Balloon Bottom"
             
             do {
                 try self.buildFrames()
@@ -247,11 +293,21 @@ class ModernBalloon: GMSpriteNode {
         override func isValidNextState(_ stateClass: AnyClass) -> Bool {
             return stateClass == MBSPopped.self
         }
+        
+        override func didEnter(from previousState: GKState?) {
+            // Make this thing move upward constantly
+            self._balloonSprite.run(SKAction.moveTo(y: 1000.0, duration: CGFloat.random(in: 5.0...15.0)))
+        }
     }
     
     class MBSPopped: GMBalloonState {
         override func isValidNextState(_ stateClass: AnyClass) -> Bool {
             return stateClass == MBSDead.self
+        }
+        
+        override func didEnter(from previousState: GKState?) {
+            self._balloonSprite._balloonTop?.fsm.enter(ModernBalloon.BalloonTop.BTSDead.self)
+            self._balloonSprite._balloonBottom?.fsm.enter(ModernBalloon.BalloonBottom.BBSFalling.self)
         }
     }
     
@@ -293,14 +349,28 @@ class ModernBalloon: GMSpriteNode {
         // Adjust the dimensions
         self.size.width = 128.0
         self.size.height = 256.0
-        self.color = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+        self.color = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
         self.zPosition = 0.5
         
         // Reposition the components
         self._balloonTop?.position = CGPoint(x: 0.0, y: 0.0)
         self._balloonBottom?.position = CGPoint(x: 0.0, y: -128.0)
         
-        // Make this thing move upward constantly
-        self.run(SKAction.moveTo(y: 1000.0, duration: CGFloat.random(in: 5.0...15.0)))
+        do {
+            try self.configureFsms()
+        } catch GMExceptions.funcNotImplemented {
+            print("This function call isn't implemented in this class!")
+        } catch {
+            print("A generic exception was encountered!")
+        }
+    }
+    
+    override func configureFsms() throws {
+        self._fsm = GKStateMachine(states: [
+            MBSAlive(self),
+            MBSPopped(self),
+            MBSDead(self)
+        ])
+        self._fsm.enter(MBSAlive.self)
     }
 }
