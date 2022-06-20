@@ -119,14 +119,9 @@ class PlayLevelScene : GMScene {
             let mathMasterRef = self._scene.gameMaster.mathMaster
             mathMasterRef.prepareLevel()
             
-            // TEST: Instantiate the test balloon
-//            self._sampleBalloon = Balloon(scene: self._scene)
-//            self._sampleBalloon?.position = CGPoint.zero
-            
             self._sampleBalloon = ModernBalloon(mathMaster: mathMasterRef)
-            self._sampleBalloon?.position = CGPoint(x: 100.0, y: 100.0)
-            
-            print("Dimensions of the Sample Balloon Sprite: \(String(describing: self._sampleBalloon?.size.width)) x \(String(describing: self._sampleBalloon?.size.height))")
+            self._sampleBalloon?.position = CGPoint(x: 0.0, y: -(sceneFrameHeight / 2.0) - 100.0)
+            self._sampleBalloon?.zPosition = 0.5
             
             // Add the MathMaster data to the correct nodes
             self._levelValue.text = String(mathMasterRef.currentLevel)
@@ -137,6 +132,8 @@ class PlayLevelScene : GMScene {
             
             self._topUiContainer = SKTopUiContainer(sceneFrameWidth: sceneFrameWidth, sceneFrameHeight: sceneFrameHeight)
             self._bottomUiContainer = SKBottomUiContainer(sceneFrameWidth: sceneFrameWidth, sceneFrameHight: sceneFrameHeight)
+            self._topUiContainer?.zPosition = 1.0
+            self._bottomUiContainer?.zPosition = 1.0
             
             self._bgm.autoplayLooped = true
             self._scene.addChild(self._bgm)

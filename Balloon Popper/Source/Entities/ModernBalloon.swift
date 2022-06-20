@@ -300,6 +300,6 @@ class ModernBalloon: GMSpriteNode {
         self._balloonBottom?.position = CGPoint(x: 0.0, y: -128.0)
         
         // Make this thing move upward constantly
-        self.run(SKAction.moveTo(y: 1000.0, duration: 10.0))
+        self.run(SKAction.moveTo(y: 1000.0, duration: CGFloat.random(in: 5.0...15.0)))
     }
 }
