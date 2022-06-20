@@ -150,6 +150,7 @@ class PlayLevelScene : GMScene {
             let mathMasterRef = self._scene.gameMaster.mathMaster
             self._topUiContainer?.updateUiValues(mathMasterRef: mathMasterRef)
             self._bottomUiContainer?.updateUiValues(mathMasterRef: mathMasterRef)
+            self._sampleBalloon?.update(deltaTime: seconds)
         }
     }
     

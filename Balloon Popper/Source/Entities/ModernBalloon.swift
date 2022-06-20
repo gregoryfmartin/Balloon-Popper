@@ -233,11 +233,21 @@ class ModernBalloon: GMSpriteNode {
                 ])
                 self._balloonBottomSprite.run(action)
             }
+            
+            override func update(deltaTime seconds: TimeInterval) {
+                super.update(deltaTime: seconds)
+                
+                if self._balloonBottomSprite.position.y <= -2000.0 {
+                    self._balloonBottomSprite.removeAllActions()
+                    self.stateMachine?.enter(BBSDead.self)
+                }
+            }
         }
         
         class BBSDead: GMBalloonBottomState {
             override func didEnter(from previousState: GKState?) {
                 // Remove this node from the parent's scene graph
+                self._balloonBottomSprite.removeFromParent()
             }
         }
         
@@ -309,9 +319,21 @@ class ModernBalloon: GMSpriteNode {
             self._balloonSprite._balloonTop?.fsm.enter(ModernBalloon.BalloonTop.BTSDead.self)
             self._balloonSprite._balloonBottom?.fsm.enter(ModernBalloon.BalloonBottom.BBSFalling.self)
         }
+        
+        override func update(deltaTime seconds: TimeInterval) {
+            super.update(deltaTime: seconds)
+            
+            if self._balloonSprite.children.count <= 0 {
+                self.stateMachine?.enter(MBSDead.self)
+            }
+        }
     }
     
-    class MBSDead: GMBalloonState {}
+    class MBSDead: GMBalloonState {
+        override func didEnter(from previousState: GKState?) {
+            self._balloonSprite.removeFromParent()
+        }
+    }
 
     fileprivate var _balloonTop: BalloonTop?
     fileprivate var _balloonBottom: BalloonBottom?
@@ -372,5 +394,11 @@ class ModernBalloon: GMSpriteNode {
             MBSDead(self)
         ])
         self._fsm.enter(MBSAlive.self)
+    }
+    
+    func update(deltaTime seconds: TimeInterval) {
+        self._fsm.update(deltaTime: seconds)
+        self._balloonBottom?.fsm.update(deltaTime: seconds)
+        self._balloonTop?.fsm.update(deltaTime: seconds)
     }
 }
