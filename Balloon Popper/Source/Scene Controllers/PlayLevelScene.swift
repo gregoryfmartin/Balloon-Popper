@@ -119,9 +119,9 @@ class PlayLevelScene : GMScene {
             let mathMasterRef = self._scene.gameMaster.mathMaster
             mathMasterRef.prepareLevel()
             
-            self._sampleBalloon = ModernBalloon(mathMaster: mathMasterRef)
-            self._sampleBalloon?.position = CGPoint(x: 0.0, y: -(sceneFrameHeight / 2.0) - 100.0)
-            self._sampleBalloon?.zPosition = 0.5
+            self._sampleBalloon = ModernBalloon(mathMaster: mathMasterRef, sceneFrame: self._scene.frame)
+//            self._sampleBalloon?.position = CGPoint(x: 0.0, y: -(sceneFrameHeight / 2.0) - 100.0)
+//            self._sampleBalloon?.zPosition = 0.5
             
             // Add the MathMaster data to the correct nodes
             self._levelValue.text = String(mathMasterRef.currentLevel)

@@ -94,6 +94,7 @@ class GMSpriteNode: SKSpriteNode, GMSpriteCommons {
     fileprivate var _movementSpeed: CGFloat = 0.0
     fileprivate var _fsm: GKStateMachine = GKStateMachine(states: [])
     fileprivate var _mathMasterRef: MathMaster?
+    fileprivate var _sceneFrame: CGRect?
     
     public var direction: Int {
         get {
@@ -121,6 +122,13 @@ class GMSpriteNode: SKSpriteNode, GMSpriteCommons {
         super.init(texture: nil, color: .white, size: .zero)
 
         self._mathMasterRef = mmr
+    }
+    
+    init(mathMaster mmr: MathMaster, sceneFrame sf: CGRect) {
+        super.init(texture: nil, color: .white, size: .zero)
+
+        self._mathMasterRef = mmr
+        self._sceneFrame = sf
     }
 }
 
@@ -246,7 +254,6 @@ class ModernBalloon: GMSpriteNode {
         
         class BBSDead: GMBalloonBottomState {
             override func didEnter(from previousState: GKState?) {
-                // Remove this node from the parent's scene graph
                 self._balloonBottomSprite.removeFromParent()
             }
         }
@@ -294,7 +301,6 @@ class ModernBalloon: GMSpriteNode {
         }
         
         override func buildActions() throws {
-            // This needs run with a ease in only
             self._actionsTable[.falling] = SKAction.moveTo(y: -1000.0, duration: 1.0)
         }
     }
@@ -373,6 +379,44 @@ class ModernBalloon: GMSpriteNode {
         self.size.height = 256.0
         self.color = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
         self.zPosition = 0.5
+        self.position = CGPoint(x: CGFloat.random(in: self.size.width...((self.scene?.frame.width)! - self.size.width)), y: -((self.scene?.frame.height)! / 2.0) - 100.0)
+        
+        // Reposition the components
+        self._balloonTop?.position = CGPoint(x: 0.0, y: 0.0)
+        self._balloonBottom?.position = CGPoint(x: 0.0, y: -128.0)
+        
+        do {
+            try self.configureFsms()
+        } catch GMExceptions.funcNotImplemented {
+            print("This function call isn't implemented in this class!")
+        } catch {
+            print("A generic exception was encountered!")
+        }
+    }
+    
+    override init(mathMaster mmr: MathMaster, sceneFrame sf: CGRect) {
+        super.init(mathMaster: mmr, sceneFrame: sf)
+        
+        // Create new instances of the top and bottom components
+        self._balloonTop = BalloonTop(mathMaster: mmr);
+        self._balloonBottom = BalloonBottom(mathMaster: mmr);
+        
+        self._balloonTop?.scale(to: CGSize(width: 128.0, height: 128.0))
+        self._balloonBottom?.scale(to: CGSize(width: 128.0, height: 128.0))
+        
+        // Combine the two balloon parts into one
+        self.addChild(self._balloonTop!)
+        self.addChild(self._balloonBottom!)
+        
+        // Adjust the dimensions
+        self.size.width = 128.0
+        self.size.height = 256.0
+        self.color = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        self.zPosition = 0.5
+//        self.position = CGPoint(x: CGFloat.random(in: -(self._sceneFrame!.width / 2.0)...((self._sceneFrame?.width)! - self.size.width)), y: -((self._sceneFrame?.height)! / 2.0) - 100.0)
+        let leftMargin: CGFloat = (-(self._sceneFrame!.width / 2.0) + (self.size.width / 2.0) + 10.0)
+        let rightMargin: CGFloat = ((self._sceneFrame!.width / 2.0) - (self.size.width / 2.0) - 10.0)
+        self.position = CGPoint(x: CGFloat.random(in: leftMargin...rightMargin), y: -((self._sceneFrame!.height / 2.0) + 60.0))
         
         // Reposition the components
         self._balloonTop?.position = CGPoint(x: 0.0, y: 0.0)
