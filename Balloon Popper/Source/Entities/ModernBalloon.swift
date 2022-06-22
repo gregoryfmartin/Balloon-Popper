@@ -96,7 +96,7 @@ class ModernBalloon: GMSpriteNode {
         // Adjust the dimensions
         self.size.width = 128.0
         self.size.height = 256.0
-        self.color = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        self.color = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.0)
         self.zPosition = 0.5
         self.position = CGPoint(x: CGFloat.random(in: self.size.width...((self.scene?.frame.width)! - self.size.width)), y: -((self.scene?.frame.height)! / 2.0) - 100.0)
         
@@ -128,9 +128,10 @@ class ModernBalloon: GMSpriteNode {
         self.addChild(self._balloonBottom!)
         
         // Adjust the dimensions
+        // This may not be necessary
         self.size.width = 128.0
         self.size.height = 256.0
-        self.color = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        self.color = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
         self.zPosition = 0.5
 //        self.position = CGPoint(x: CGFloat.random(in: -(self._sceneFrame!.width / 2.0)...((self._sceneFrame?.width)! - self.size.width)), y: -((self._sceneFrame?.height)! / 2.0) - 100.0)
         let leftMargin: CGFloat = (-(self._sceneFrame!.width / 2.0) + (self.size.width / 2.0) + 10.0)

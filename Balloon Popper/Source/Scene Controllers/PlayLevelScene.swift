@@ -180,10 +180,13 @@ class PlayLevelScene : GMScene {
         self.buildFsm()
         self._ssm.enter(PLSStarting.self) // Deferred from the buildFsm function, where this is normally called
         self.scene?.scaleMode = .aspectFit
+        self.scene?.backgroundColor = .black
     }
     
     override func update(_ currentTime: TimeInterval) {
         self._ssm.update(deltaTime: currentTime)
+        
+        print("Number of children: \(self.scene!.children.count)")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
