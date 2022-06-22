@@ -150,7 +150,17 @@ class PlayLevelScene : GMScene {
             let mathMasterRef = self._scene.gameMaster.mathMaster
             self._topUiContainer?.updateUiValues(mathMasterRef: mathMasterRef)
             self._bottomUiContainer?.updateUiValues(mathMasterRef: mathMasterRef)
-            self._sampleBalloon?.update(deltaTime: seconds)
+//            self._sampleBalloon?.update(deltaTime: seconds)
+            
+            if mathMasterRef.tryBalloonLaunch() {
+                self._scene.addChild(ModernBalloon(mathMaster: mathMasterRef, sceneFrame: self._scene.frame))
+            }
+            
+            for a in self._scene.children {
+                if type(of: a) == ModernBalloon.self {
+                    (a as! ModernBalloon).update(deltaTime: seconds)
+                }
+            }
         }
     }
     
@@ -168,7 +178,7 @@ class PlayLevelScene : GMScene {
     
     override func sceneDidLoad() {
         self.buildFsm()
-        self._ssm.enter(PLSStarting.self)
+        self._ssm.enter(PLSStarting.self) // Deferred from the buildFsm function, where this is normally called
         self.scene?.scaleMode = .aspectFit
     }
     
@@ -182,8 +192,10 @@ class PlayLevelScene : GMScene {
         let frontTouchedNode = atPoint(location)
         
         if ((frontTouchedNode.name?.contains("Balloon Top")) != nil) {
-            let mbs: ModernBalloon = frontTouchedNode.parent as! ModernBalloon
-            mbs.fsm.enter(ModernBalloon.MBSPopped.self)
+            if type(of: frontTouchedNode) == GMBalloonTop.self {
+                let mbs: ModernBalloon = frontTouchedNode.parent as! ModernBalloon
+                mbs.fsm.enter(ModernBalloon.MBSPopped.self)
+            }
         }
     }
 }
