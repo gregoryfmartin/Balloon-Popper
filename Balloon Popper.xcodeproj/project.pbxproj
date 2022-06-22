@@ -17,6 +17,14 @@
 		D1029773286019AB003AE37E /* Balloon Basket Falling.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1029771286019AB003AE37E /* Balloon Basket Falling.wav */; };
 		D13159F828492A030083E898 /* SKBottomUiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13159F728492A030083E898 /* SKBottomUiContainer.swift */; };
 		D13159F928492A030083E898 /* SKBottomUiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13159F728492A030083E898 /* SKBottomUiContainer.swift */; };
+		D132FDD6286163C1003CEBAF /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = D132FDD5286163C1003CEBAF /* General.swift */; };
+		D132FDD7286163C1003CEBAF /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = D132FDD5286163C1003CEBAF /* General.swift */; };
+		D132FDD928616458003CEBAF /* GMSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D132FDD828616458003CEBAF /* GMSpriteNode.swift */; };
+		D132FDDA28616458003CEBAF /* GMSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D132FDD828616458003CEBAF /* GMSpriteNode.swift */; };
+		D132FDDC2861660A003CEBAF /* GMBalloonTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D132FDDB2861660A003CEBAF /* GMBalloonTop.swift */; };
+		D132FDDD2861660A003CEBAF /* GMBalloonTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D132FDDB2861660A003CEBAF /* GMBalloonTop.swift */; };
+		D132FDDF286166E8003CEBAF /* GMBalloonBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D132FDDE286166E8003CEBAF /* GMBalloonBottom.swift */; };
+		D132FDE0286166E8003CEBAF /* GMBalloonBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D132FDDE286166E8003CEBAF /* GMBalloonBottom.swift */; };
 		D13FF70E284CDEDE006F0B5F /* Play Arena Music A.wav in Resources */ = {isa = PBXBuildFile; fileRef = D13FF70D284CDEDE006F0B5F /* Play Arena Music A.wav */; };
 		D13FF70F284CDEDE006F0B5F /* Play Arena Music A.wav in Resources */ = {isa = PBXBuildFile; fileRef = D13FF70D284CDEDE006F0B5F /* Play Arena Music A.wav */; };
 		D14387D828175BFF005F5D64 /* SplashScreenAScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14387D728175BFF005F5D64 /* SplashScreenAScene.swift */; };
@@ -154,6 +162,10 @@
 		D102976E28601997003AE37E /* Balloon Pop C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Balloon Pop C.wav"; sourceTree = "<group>"; };
 		D1029771286019AB003AE37E /* Balloon Basket Falling.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Balloon Basket Falling.wav"; sourceTree = "<group>"; };
 		D13159F728492A030083E898 /* SKBottomUiContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKBottomUiContainer.swift; sourceTree = "<group>"; };
+		D132FDD5286163C1003CEBAF /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
+		D132FDD828616458003CEBAF /* GMSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSpriteNode.swift; sourceTree = "<group>"; };
+		D132FDDB2861660A003CEBAF /* GMBalloonTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMBalloonTop.swift; sourceTree = "<group>"; };
+		D132FDDE286166E8003CEBAF /* GMBalloonBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMBalloonBottom.swift; sourceTree = "<group>"; };
 		D13FF70D284CDEDE006F0B5F /* Play Arena Music A.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Play Arena Music A.wav"; sourceTree = "<group>"; };
 		D14387D728175BFF005F5D64 /* SplashScreenAScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenAScene.swift; sourceTree = "<group>"; };
 		D14387D928175D46005F5D64 /* SplashScreenBScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenBScene.swift; sourceTree = "<group>"; };
@@ -474,6 +486,7 @@
 				D15C0686282C56EF001702F4 /* State Management */,
 				D1CB21E62815EE5F0006696D /* GameMaster.swift */,
 				D1C99676281F678E00C42039 /* MathMaster.swift */,
+				D132FDD5286163C1003CEBAF /* General.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -483,6 +496,9 @@
 			children = (
 				D1F889DF28441728009E2649 /* SKTopUiContainer.swift */,
 				D13159F728492A030083E898 /* SKBottomUiContainer.swift */,
+				D132FDD828616458003CEBAF /* GMSpriteNode.swift */,
+				D132FDDB2861660A003CEBAF /* GMBalloonTop.swift */,
+				D132FDDE286166E8003CEBAF /* GMBalloonBottom.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -656,6 +672,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D132FDDA28616458003CEBAF /* GMSpriteNode.swift in Sources */,
 				D1836CF62818DBFC00F3E066 /* GameMaster.swift in Sources */,
 				D17E98652818DB53004EA7E3 /* Balloon.swift in Sources */,
 				D15C0696282C592C001702F4 /* GMSOptionsScreen.swift in Sources */,
@@ -666,13 +683,16 @@
 				D15C0699282C5979001702F4 /* GMSCreditsScreen.swift in Sources */,
 				D13159F928492A030083E898 /* SKBottomUiContainer.swift in Sources */,
 				D15C068D282C581F001702F4 /* GMSSplashScreenA.swift in Sources */,
+				D132FDDD2861660A003CEBAF /* GMBalloonTop.swift in Sources */,
 				D17E98682818DB53004EA7E3 /* TitleScreenScene.swift in Sources */,
 				D17E98692818DB53004EA7E3 /* OptionsScreenScene.swift in Sources */,
 				D17E986A2818DB53004EA7E3 /* CreditsScreenScene.swift in Sources */,
 				D15C06A9282C5A48001702F4 /* GMSGameLose.swift in Sources */,
 				D15C0689282C5767001702F4 /* GameMasterState.swift in Sources */,
 				D1C99678281F678E00C42039 /* MathMaster.swift in Sources */,
+				D132FDD7286163C1003CEBAF /* General.swift in Sources */,
 				D15C069F282C59C3001702F4 /* GMSPlayLevelWin.swift in Sources */,
+				D132FDE0286166E8003CEBAF /* GMBalloonBottom.swift in Sources */,
 				D15C06A6282C5A18001702F4 /* GMSGameWin.swift in Sources */,
 				D17E986B2818DB53004EA7E3 /* PlayLevelScene.swift in Sources */,
 				D17E986C2818DB53004EA7E3 /* PlayLevelWinScene.swift in Sources */,
@@ -696,6 +716,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D132FDD928616458003CEBAF /* GMSpriteNode.swift in Sources */,
 				D14C1C672817857200BCA0A6 /* PlayLevelWinScene.swift in Sources */,
 				D1CB21E72815EE5F0006696D /* GameMaster.swift in Sources */,
 				D15C0695282C592C001702F4 /* GMSOptionsScreen.swift in Sources */,
@@ -706,13 +727,16 @@
 				D15C0698282C5979001702F4 /* GMSCreditsScreen.swift in Sources */,
 				D13159F828492A030083E898 /* SKBottomUiContainer.swift in Sources */,
 				D15C068C282C581F001702F4 /* GMSSplashScreenA.swift in Sources */,
+				D132FDDC2861660A003CEBAF /* GMBalloonTop.swift in Sources */,
 				D193C6422812365700D4C4A0 /* ViewController.swift in Sources */,
 				D14C1C6B281785C800BCA0A6 /* GameWinScene.swift in Sources */,
 				D193C6402812365700D4C4A0 /* GameScene.swift in Sources */,
 				D15C06A8282C5A48001702F4 /* GMSGameLose.swift in Sources */,
 				D15C0688282C5767001702F4 /* GameMasterState.swift in Sources */,
 				D1C99677281F678E00C42039 /* MathMaster.swift in Sources */,
+				D132FDD6286163C1003CEBAF /* General.swift in Sources */,
 				D15C069E282C59C3001702F4 /* GMSPlayLevelWin.swift in Sources */,
+				D132FDDF286166E8003CEBAF /* GMBalloonBottom.swift in Sources */,
 				D15C06A5282C5A18001702F4 /* GMSGameWin.swift in Sources */,
 				D14387DA28175D46005F5D64 /* SplashScreenBScene.swift in Sources */,
 				D14C1C632817848600BCA0A6 /* CreditsScreenScene.swift in Sources */,
