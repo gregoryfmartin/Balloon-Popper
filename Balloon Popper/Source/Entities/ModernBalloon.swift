@@ -43,6 +43,7 @@ class ModernBalloon: GMSpriteNode {
         override func didEnter(from previousState: GKState?) {
             self._balloonSprite._balloonTop?.fsm.enter(GMBalloonTop.BTSDead.self)
             self._balloonSprite._balloonBottom?.fsm.enter(GMBalloonBottom.BBSFalling.self)
+            self._balloonSprite._mathMasterRef?.currentScore += 5
         }
         
         override func update(deltaTime seconds: TimeInterval) {
