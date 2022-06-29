@@ -218,7 +218,7 @@ class MathMaster {
         
         let chance = Int.random(in: 0 ..< 500)
         
-        if self._numBalloonsLaunched != self._numBalloonsForLevel {
+        if self._numBalloonsLaunched <= self._numBalloonsForLevel - 1 {
         
             if chance < self._balloonLaunchThreshold {
                 self._numBalloonsLaunched += 1

@@ -205,27 +205,32 @@ class PlayLevelScene : GMScene {
     
     class PLSEnding: SceneMinorState {
         override func didEnter(from previousState: GKState?) {
-            let mathMasterRef = self._scene.gameMaster.mathMaster
-            if mathMasterRef.hasPlayerWon() {
-                // Display a set of nodes
-                let congratsLabel: SKLabelNode = SKLabelNode(text: "Congratulations!")
-                let nextLevelLabel: SKLabelNode = SKLabelNode(text: "Next Level?")
-                let congratsVfx: SKAudioNode = SKAudioNode(fileNamed: "Voice You Win")
-                
-                congratsLabel.fontSize = 100.0
-                congratsLabel.fontColor = .blue
-                congratsLabel.position = CGPoint.zero
-                nextLevelLabel.fontSize = 75.0
-                nextLevelLabel.fontColor = .green
-                nextLevelLabel.position = CGPoint(x: 0.0, y: -100.0)
-                congratsVfx.autoplayLooped = false
-                
-                self._scene.addChild(congratsLabel)
-                self._scene.addChild(nextLevelLabel)
-                self._scene.addChild(congratsVfx)
-            } else {
-                // Display a different set of nodes
-            }
+            self._scene.run(SKAction.sequence([
+                SKAction.wait(forDuration: 3.0),
+                SKAction.run {
+                    let mathMasterRef = self._scene.gameMaster.mathMaster
+                    if mathMasterRef.hasPlayerWon() {
+                        // Display a set of nodes
+                        let congratsLabel: SKLabelNode = SKLabelNode(text: "Congratulations!")
+                        let nextLevelLabel: SKLabelNode = SKLabelNode(text: "Next Level?")
+                        let congratsVfx: SKAudioNode = SKAudioNode(fileNamed: "Voice You Win")
+                        
+                        congratsLabel.fontSize = 100.0
+                        congratsLabel.fontColor = .blue
+                        congratsLabel.position = CGPoint.zero
+                        nextLevelLabel.fontSize = 75.0
+                        nextLevelLabel.fontColor = .green
+                        nextLevelLabel.position = CGPoint(x: 0.0, y: -100.0)
+                        congratsVfx.autoplayLooped = false
+                        
+                        self._scene.addChild(congratsLabel)
+                        self._scene.addChild(nextLevelLabel)
+                        self._scene.addChild(congratsVfx)
+                    } else {
+                        // Display a different set of nodes
+                    }
+                }
+            ]))
         }
     }
     
