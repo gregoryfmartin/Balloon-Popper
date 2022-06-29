@@ -44,7 +44,8 @@ class ModernBalloon: GMSpriteNode {
             self._balloonSprite._balloonTop?.fsm.enter(GMBalloonTop.BTSDead.self)
             self._balloonSprite._balloonBottom?.fsm.enter(GMBalloonBottom.BBSFalling.self)
             self._balloonSprite._mathMasterRef?.currentScore += 5  // TODO: Make the score a computed property rather than a literal
-            self._balloonSprite._mathMasterRef?.numBalloonsTapped += 1 
+            self._balloonSprite._mathMasterRef?.numBalloonsTapped += 1
+            self._balloonSprite.size = CGSize.zero
         }
         
         override func update(deltaTime seconds: TimeInterval) {
