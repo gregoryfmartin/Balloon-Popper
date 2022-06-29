@@ -170,6 +170,7 @@ class PlayLevelScene : GMScene {
         }
         
         override func willExit(to nextState: GKState) {
+            // TODO: Codify these values in settings elsewhere in code
             let bgmActions = SKAction.sequence([
                 SKAction.changeVolume(to: 0.0, duration: 2.0),
                 SKAction.run {
@@ -191,24 +192,42 @@ class PlayLevelScene : GMScene {
                     SKAction.run {
                         self._bottomUiContainer?.run(bottomUiContainerActions)
                     }
-                ])
+                ]),
+                SKAction.run {
+                    // This may result in super inefficient code, but I'm going to run with it for the time being
+                    self._bgm.removeFromParent()
+                    self._topUiContainer?.removeFromParent()
+                    self._bottomUiContainer?.removeFromParent()
+                }
             ]))
-            
-//            self._scene.run(SKAction.wait(forDuration: 2.0))
-//            self._bgm.run(SKAction.sequence([
-//                SKAction.changeVolume(to: 0.0, duration: 2.0),
-//                SKAction.run {
-//                    self._bgm.removeFromParent()
-//                }
-//            ]))
-//
-//            // Slide the top and bottom ui frames out of the way
-//            self._topUiContainer?.run(SKAction.moveTo(x: 2000.0, duration: 2.0))
-//            self._bottomUiContainer?.run(SKAction.moveTo(x: -2000.0, duration: 2.0))
         }
     }
     
-    class PLSEnding: SceneMinorState {}
+    class PLSEnding: SceneMinorState {
+        override func didEnter(from previousState: GKState?) {
+            let mathMasterRef = self._scene.gameMaster.mathMaster
+            if mathMasterRef.hasPlayerWon() {
+                // Display a set of nodes
+                let congratsLabel: SKLabelNode = SKLabelNode(text: "Congratulations!")
+                let nextLevelLabel: SKLabelNode = SKLabelNode(text: "Next Level?")
+                let congratsVfx: SKAudioNode = SKAudioNode(fileNamed: "Voice You Win")
+                
+                congratsLabel.fontSize = 100.0
+                congratsLabel.fontColor = .blue
+                congratsLabel.position = CGPoint.zero
+                nextLevelLabel.fontSize = 75.0
+                nextLevelLabel.fontColor = .green
+                nextLevelLabel.position = CGPoint(x: 0.0, y: -100.0)
+                congratsVfx.autoplayLooped = false
+                
+                self._scene.addChild(congratsLabel)
+                self._scene.addChild(nextLevelLabel)
+                self._scene.addChild(congratsVfx)
+            } else {
+                // Display a different set of nodes
+            }
+        }
+    }
     
     private var _ssm: GKStateMachine = GKStateMachine(states: [])
     
