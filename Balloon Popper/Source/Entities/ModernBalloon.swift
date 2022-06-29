@@ -33,6 +33,12 @@ class ModernBalloon: GMSpriteNode {
             // Make this thing move upward constantly
             self._balloonSprite.run(SKAction.moveTo(y: 1000.0, duration: CGFloat.random(in: 5.0...15.0)))
         }
+        
+        override func update(deltaTime seconds: TimeInterval) {
+            super.update(deltaTime: seconds)
+            
+            // TODO: Check to see if we've floated above the viewport
+        }
     }
     
     class MBSPopped: GMBalloonState {
@@ -54,13 +60,12 @@ class ModernBalloon: GMSpriteNode {
             if self._balloonSprite.children.count <= 0 {
                 self.stateMachine?.enter(MBSDead.self)
             }
-            
-            // TODO: Add check for if the balloon flies above the screen
         }
     }
     
     class MBSDead: GMBalloonState {
         override func didEnter(from previousState: GKState?) {
+            self._balloonSprite.removeAllActions()
             self._balloonSprite.removeFromParent()
         }
     }

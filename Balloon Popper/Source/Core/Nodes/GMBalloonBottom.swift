@@ -68,7 +68,9 @@ class GMBalloonBottom: GMSpriteNode {
         override func update(deltaTime seconds: TimeInterval) {
             super.update(deltaTime: seconds)
             
-            if self._balloonBottomSprite.position.y <= -2000.0 {
+            // TODO: This could be tighter, but now the literal needs codified elsewhere in the program
+            let sceneFrameBottomOob: CGFloat = (-(self._balloonBottomSprite.scene!.frame.height / 2.0)) - 64.0
+            if self._balloonBottomSprite.position.y <= sceneFrameBottomOob {
                 self._balloonBottomSprite.removeAllActions()
                 self.stateMachine?.enter(BBSDead.self)
             }
