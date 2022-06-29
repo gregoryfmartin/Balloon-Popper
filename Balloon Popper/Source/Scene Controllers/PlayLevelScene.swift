@@ -128,7 +128,7 @@ class PlayLevelScene : GMScene {
             
             // Provision the nodes
             // Most of this is going to be dynamic positioning.
-            print("\(self._scene.frame.width) x  \(self._scene.frame.height)")
+//            print("\(self._scene.frame.width) x  \(self._scene.frame.height)")
             
             self._topUiContainer = SKTopUiContainer(sceneFrameWidth: sceneFrameWidth, sceneFrameHeight: sceneFrameHeight)
             self._bottomUiContainer = SKBottomUiContainer(sceneFrameWidth: sceneFrameWidth, sceneFrameHight: sceneFrameHeight)
@@ -152,8 +152,14 @@ class PlayLevelScene : GMScene {
             self._bottomUiContainer?.updateUiValues(mathMasterRef: mathMasterRef)
 //            self._sampleBalloon?.update(deltaTime: seconds)
             
-            if mathMasterRef.tryBalloonLaunch() {
+            let (launchesRemaining, canLaunch) = mathMasterRef.tryBalloonLaunch()
+            
+            if launchesRemaining == .launchesRemaining && canLaunch {
                 self._scene.addChild(ModernBalloon(mathMaster: mathMasterRef, sceneFrame: self._scene.frame))
+            } else if launchesRemaining == .launchesExhausted {
+                if self._scene.children.count <= 4 {
+                    self.stateMachine?.enter(PLSEnding.self)
+                }
             }
             
             for a in self._scene.children {
@@ -161,6 +167,44 @@ class PlayLevelScene : GMScene {
                     (a as! ModernBalloon).update(deltaTime: seconds)
                 }
             }
+        }
+        
+        override func willExit(to nextState: GKState) {
+            let bgmActions = SKAction.sequence([
+                SKAction.changeVolume(to: 0.0, duration: 2.0),
+                SKAction.run {
+                    self._bgm.removeFromParent()
+                }
+            ])
+            let topUiContainerActions = SKAction.moveTo(x: 2000.0, duration: 2.0)
+            let bottomUiContainerActions = SKAction.moveTo(x: -2000.0, duration: 2.0)
+            
+            self._scene.run(SKAction.sequence([
+                SKAction.wait(forDuration: 1.0),
+                SKAction.group([
+                    SKAction.run {
+                        self._bgm.run(bgmActions)
+                    },
+                    SKAction.run {
+                        self._topUiContainer?.run(topUiContainerActions)
+                    },
+                    SKAction.run {
+                        self._bottomUiContainer?.run(bottomUiContainerActions)
+                    }
+                ])
+            ]))
+            
+//            self._scene.run(SKAction.wait(forDuration: 2.0))
+//            self._bgm.run(SKAction.sequence([
+//                SKAction.changeVolume(to: 0.0, duration: 2.0),
+//                SKAction.run {
+//                    self._bgm.removeFromParent()
+//                }
+//            ]))
+//
+//            // Slide the top and bottom ui frames out of the way
+//            self._topUiContainer?.run(SKAction.moveTo(x: 2000.0, duration: 2.0))
+//            self._bottomUiContainer?.run(SKAction.moveTo(x: -2000.0, duration: 2.0))
         }
     }
     
@@ -186,7 +230,7 @@ class PlayLevelScene : GMScene {
     override func update(_ currentTime: TimeInterval) {
         self._ssm.update(deltaTime: currentTime)
         
-        print("Number of children: \(self.scene!.children.count)")
+//        print("Number of children: \(self.scene!.children.count)")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

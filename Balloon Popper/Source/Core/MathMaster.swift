@@ -8,6 +8,11 @@
 import Foundation
 
 class MathMaster {
+    enum BalloonLaunchState {
+        case launchesRemaining
+        case launchesExhausted
+    }
+    
     ///
     /// The number of times the player can retry a level without having to use a continue. If this drops to zero and the player loses a level, they must use a continue to keep playing the game at the current level. Currently, there is no way to increase this value (insofar as a powerup in the game is concerned).
     ///
@@ -199,15 +204,31 @@ class MathMaster {
     }
     
     ///
+    /// Says if the current level is over according to the number of balloons that have floated.
+    ///
+    public func isLevelOver () -> Bool {
+        return self._numBalloonsLaunched >= self._numBalloonsForLevel
+    }
+    
+    ///
     /// Attempts to launch a balloon
     ///
-    public func tryBalloonLaunch () -> Bool {
+    public func tryBalloonLaunch () -> (BalloonLaunchState, Bool) {
+        print("Balloons for Level: \(self._numBalloonsForLevel) :: Balloons Launched: \(self._numBalloonsLaunched)")
+        
         let chance = Int.random(in: 0 ..< 500)
-        if chance < self._balloonLaunchThreshold {
-            self._numBalloonsLaunched += 1
-            return true
+        
+        if self._numBalloonsLaunched != self._numBalloonsForLevel {
+        
+            if chance < self._balloonLaunchThreshold {
+                self._numBalloonsLaunched += 1
+                return (BalloonLaunchState.launchesRemaining, true)
+            } else {
+                return (BalloonLaunchState.launchesRemaining, false)
+            }
+            
         } else {
-            return false
+            return (BalloonLaunchState.launchesExhausted, false)
         }
     }
 }
