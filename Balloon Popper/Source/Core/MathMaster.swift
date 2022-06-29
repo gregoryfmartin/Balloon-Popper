@@ -39,6 +39,11 @@ class MathMaster {
     private var _numBalloonsForLevel: Int = 0
     
     ///
+    /// The current number of balloons that have been launched for this level. This acts as the accumulator that gets weighed against numBalloonsForLevel.
+    ///
+    private var _numBalloonsLaunched: Int = 0
+    
+    ///
     /// The current number of balloons that have been tapped in this level. This value is reset at the start of each level.
     ///
     private var _numBalloonsTapped: Int = 0
@@ -52,11 +57,6 @@ class MathMaster {
     /// Used to determine if a balloon can be launched from the bottom of the screen.
     ///
     private var _balloonLaunchThreshold: Int = 5
-    
-    ///
-    /// The tracker for the balloons that are launched in the level.
-    ///
-    private var _balloonTracker: [ModernBalloon] = []
     
     ///
     /// Public accessor for the private member of the same name.
@@ -143,15 +143,6 @@ class MathMaster {
     }
     
     ///
-    /// Public accessor for the private member of the same name.
-    ///
-    public var balloonTracker: [ModernBalloon] {
-        get {
-            return self._balloonTracker
-        }
-    }
-    
-    ///
     /// In this current iteration, this is a poor way of implementing difficulty while also castrating the number of possible levels (although at this stage in development, it's not the end of the world). Essentially, we have 10 levels with a literal difficulty scalar. The key is the level and the value is a two-member tuple where the first value is the difficulty scalar and the second value is threshold for level completion (a.k.a. the number of balloons that need popped to have been considered a win).
     ///
     /// The formula to determine the number of balloons per level to fly is as follows: (Base Number \* Scalar) + Base Number = Total Balloons
@@ -184,9 +175,6 @@ class MathMaster {
         let (dscalar, cthreshold) = MathMaster.difficultyLookupTable[self._currentLevel]!
         self._numBalloonsForLevel = Int.init((self._baseNumBalloons * dscalar) + self._baseNumBalloons)
         self._numBalloonsToPop = Int.init(Float.init(self._numBalloonsForLevel) * cthreshold)
-        
-        // Clear the balloon tracker
-        self._balloonTracker = []
     }
     
     ///
@@ -201,9 +189,6 @@ class MathMaster {
         let (dscalar, cthreshold) = MathMaster.difficultyLookupTable[self._currentLevel]!
         self._numBalloonsForLevel = Int.init((self._baseNumBalloons * dscalar) + self._baseNumBalloons)
         self._numBalloonsToPop = Int.init(Float.init(self._numBalloonsForLevel) * cthreshold)
-        
-        // Clear the balloon tracker
-        self._balloonTracker = []
     }
     
     ///
@@ -214,11 +199,12 @@ class MathMaster {
     }
     
     ///
-    /// Attempts to launch a ballon
+    /// Attempts to launch a balloon
     ///
     public func tryBalloonLaunch () -> Bool {
         let chance = Int.random(in: 0 ..< 500)
         if chance < self._balloonLaunchThreshold {
+            self._numBalloonsLaunched += 1
             return true
         } else {
             return false

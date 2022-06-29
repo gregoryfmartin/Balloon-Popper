@@ -43,7 +43,8 @@ class ModernBalloon: GMSpriteNode {
         override func didEnter(from previousState: GKState?) {
             self._balloonSprite._balloonTop?.fsm.enter(GMBalloonTop.BTSDead.self)
             self._balloonSprite._balloonBottom?.fsm.enter(GMBalloonBottom.BBSFalling.self)
-            self._balloonSprite._mathMasterRef?.currentScore += 5
+            self._balloonSprite._mathMasterRef?.currentScore += 5  // TODO: Make the score a computed property rather than a literal
+            self._balloonSprite._mathMasterRef?.numBalloonsTapped += 1 
         }
         
         override func update(deltaTime seconds: TimeInterval) {
@@ -52,6 +53,8 @@ class ModernBalloon: GMSpriteNode {
             if self._balloonSprite.children.count <= 0 {
                 self.stateMachine?.enter(MBSDead.self)
             }
+            
+            // TODO: Add check for if the balloon flies above the screen
         }
     }
     
@@ -80,6 +83,7 @@ class ModernBalloon: GMSpriteNode {
         super.init(coder: aDecoder)
     }
     
+    @available(*, unavailable)
     override init(mathMaster mmr: MathMaster) {
         super.init(mathMaster: mmr)
         
